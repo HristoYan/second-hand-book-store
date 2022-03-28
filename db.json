@@ -1,0 +1,77 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "name": "Default",
+      "username": "admin",
+      "password": "mitko12/3",
+      "gender": "Male",
+      "role": "ADMIN",
+      "imgUrl": "https://as2.ftcdn.net/v2/jpg/01/19/32/93/1000_F_119329387_sUTbUdeyhk0nuhNw5WaFvOyQFmxeppjX.jpg",
+      "short description": "text text text",
+      "status": "ACTIVE",
+      "date": "2022-3-19/11:51:53",
+      "lastModification": "2022-3-19/11:51:53"
+    },
+    {
+      "name": "emo",
+      "username": "emoto",
+      "password": "re12+fjk",
+      "gender": "Male",
+      "role": "User",
+      "imgUrl": "https://www.google.com/search?q=user+picture&rlz=1C1GCEA_enBG899BG899&sxsrf=APq-WBuhb6RrrISH0BeZkxxPGcTRFhqYqQ:1647517921666&tbm=isch&source=iu&ictx=1&vet=1&fir=iH9z_7R9D1tBpM%252Cew2HyCuyXyCJVM%252C_%253BoPiqei7vEbI03M%252CwLMr0fedobi8RM%252C_%253BdzPYWaGt8jz9-M%252CxyV8ddqOau4KMM%252C_%253B5EMYCfbP3D3XuM%252Cwm3m253FOCCAUM%252C_%253B4kXGls3qUNG46M%252Cu1SY3va6wsUW9M%252C_%253B3ieVDLEJVcWu5M%252CTMbHzRmYG8eIVM%252C_%253BP6AlQsrs5ks3RM%252CnKbZ7-T8tpkWLM%252C_%253BIVgx2CC_VChlFM%252CwLMr0fedobi8RM%252C_%253BKnR9uI1e8d4qTM%252CIuY_NaZ2k4MpJM%252C_%253BueMBUzW4NL-4tM%252Cq1IN7PDsfewqvM%252C_%253BtV2S8z0k2PPDeM%252Cu9EZShJE4IdRWM%252C_%253BSBUlgl2FWFFpQM%252CvEf3EbQkmklkOM%252C_%253BU5mCZ0cpcTzm6M%252CODve1aLLFZNQtM%252C_%253Br4lOs3e6dvbhdM%252CY1DbB5Ujc_VfgM%252C_%253BNu3vaVv-iagK0M%252CY1DbB5Ujc_VfgM%252C_%253BY0eNQ2lGEEKWAM%252Cq1IN7PDsfewqvM%252C_&usg=AI4_-kS1yyhE0DDGKcbbTsyoGKPVzvqInA&sa=X&ved=2ahUKEwiYlO3Dis32AhXkQvEDHfTNA3UQ9QF6BAgDEAE#imgrc=iH9z_7R9D1tBpM",
+      "short_description": "short and fat but happy",
+      "status": "Active",
+      "date": "2022-3-19/11:51:53",
+      "lastModification": "2022-3-25/10:29:46",
+      "id": 8
+    },
+    {
+      "name": "Hristo",
+      "username": "Hristoyan",
+      "password": "passWord123",
+      "gender": "Male",
+      "role": "Admin",
+      "imgUrl": "https://imgs.search.brave.com/QZ6S-ifL-cSBgMl2tpMdBS0wsBZ8if5S953B8idVnsg/rs:fit:420:225:1/g:ce/aHR0cHM6Ly90c2U0/Lm1tLmJpbmcubmV0/L3RoP2lkPU9JUC5t/VERLMjdQbmRnNnFW/eVFtY0pRWDRRQUFB/QSZwaWQ9QXBp",
+      "short_description": "that's me",
+      "status": "Active",
+      "date": "2022-3-22/21:10:47",
+      "lastModification": "2022-3-22/21:10:47",
+      "id": 18
+    },
+    {
+      "name": "martina",
+      "username": "martito",
+      "password": "passwodr123+",
+      "gender": "Female",
+      "role": "Admin",
+      "imgUrl": "https://imgs.search.brave.com/UhR0mXJ7ODwiElw02tUz8iZS0v1RMt3QxmMXiiFq70M/rs:fit:489:225:1/g:ce/aHR0cHM6Ly90c2Uz/Lm1tLmJpbmcubmV0/L3RoP2lkPU9JUC5U/NFFlb3Y3WUgxM3BY/bk1HQ2FlVUlRSGFI/TCZwaWQ9QXBp",
+      "short_description": "angry and stuborn",
+      "status": "Active",
+      "date": "2022-3-22/21:13:50",
+      "lastModification": "2022-3-22/21:13:50",
+      "id": 19
+    }
+  ],
+  "books": [
+    {
+      "seller": "emoto",
+      "sellerId": 8,
+      "condition": 4,
+      "price": 10.99,
+      "imgUrl": "http://books.google.com/books/content?id=AcI6_aBD17sC&printsec=frontcover&img=1&zoom=1&edge=curl&imgtk=AFLRE728FmcZDcV7i_lJjsKXvlIYEBbAXH6PFCP-w5h7g9sagQr6K-ttl6nVHcHeGg_TkBs58vN7mSxJpiffsBpYIUoJaADRVcDcMXnY280h2EFTJyO14zkX6UCXK6q6G1e6UNmCy7-9&source=gbs_api",
+      "title": "Java for Artists",
+      "authors": [
+        "Rick Miller",
+        "Raffi Kasparian"
+      ],
+      "publisher": "Pulp Free Press",
+      "year": "2006",
+      "categories": [
+        "Computers / Programming / General"
+      ],
+      "description": "Java For Artists: The Art, Philosophy, and Science of Object-Oriented Programming is a Java programming language text/tradebook that targets beginner and intermediate Java programmers.",
+      "id": 1
+    }
+  ]
+}
