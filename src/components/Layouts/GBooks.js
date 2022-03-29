@@ -1,14 +1,15 @@
-import React from 'react'
-import GBookList from './GBookList'
+import React from 'react';
+import GBookList from './GBookList';
+import '../utilities/styleH2.css';
 
-const GBooks = ({ books }) => {
+const GBooks = ({ books, setBookToSell }) => {
     console.log(books);
     return (
         <div className="container">
             <div className="section">
-                <h2 style={{ color: "#2196F3", margin: "50px" }}>Reading Time</h2>
+                <h2>Reading Time</h2>
                 <div className="row">
-                    <GBookList books={books} />
+                    <GBookList books={books} setBookToSell={setBookToSell}/>
                 </div>
             </div>
         </div >

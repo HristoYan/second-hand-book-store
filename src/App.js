@@ -15,12 +15,14 @@ import { EditUser } from './components/Users/EditUser';
 import { AddBookForm } from './components/Forms/AddBookForm';
 import {EditBookForm} from './components/Forms/EditBookForm';
 import MyBooks from './components/Layouts/MyBooks';
+import { GBookToSellForm } from './components/Forms/GBookToSellForm';
 
 function App() {
   const [tags, setTags] = useState();
   const [gBooks, setGBooks] = useState([]);
   const [books, setBooks] = useState([]);
   const [userToEdit, setUserToEdit] = useState();
+  const [bookToSell, setBookToSell] = useState();
   const [bookToEdit, setBookToEdit] = useState();
   const [errors, setErrors] = useState();
   const [messages, setMessages] = useState();
@@ -103,6 +105,8 @@ function App() {
     }
   }
 
+  console.log(`BookToSell: ${JSON.stringify(bookToSell)}`);
+
   return (
     <>
       <div className="App">
@@ -114,12 +118,14 @@ function App() {
           <Route path='/login' element={<LogInForm />} />
 
           <Route path='/' element={<Main books={books} onDeleteBook={deleteBook} onEditBook={editBook}/>} />
-          <Route path='/explore' element={<GBooks books={gBooks} />} />
+          <Route path='/explore' element={<GBooks books={gBooks} setBookToSell={setBookToSell}/>} />
           <Route path='/users' element={<Users onEditUser={editUser} onDeleteUser={deleteUser} />} />
           <Route path='/edit-user' element={<EditUser user={userToEdit} />} />
           <Route path='/add-book' element={<AddBookForm onBookSubmit={handleSubmitBook("add")} />} />
           <Route path='/edit-book' element={<EditBookForm onBookSubmit={handleSubmitBook("edit")} />} />
           <Route path='/my-books' element={<MyBooks books={books} onDeleteBook={deleteBook} onEditBook={editBook}/>} />
+          <Route path='/sell-gbook' element={<GBookToSellForm book={bookToSell} onBookSubmit={handleSubmitBook("add")} />} />
+
 
         </Routes>
         <Footer />

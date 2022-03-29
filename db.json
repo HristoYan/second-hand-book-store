@@ -112,6 +112,46 @@
       "date": "2022-3-29/21:4:12",
       "lastModification": "2022-3-29/21:4:12",
       "id": 3
+    },
+    {
+      "seller": "emoto",
+      "sellerId": 8,
+      "condition": 5,
+      "price": 20,
+      "imgUrl": "http://books.google.com/books/content?id=274fCwAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
+      "title": "Learning React Native",
+      "authors": [
+        "Bonnie Eisenman"
+      ],
+      "publisher": "\"O'Reilly Media, Inc.\"",
+      "year": "2015-12-03",
+      "categories": [
+        "Computers"
+      ],
+      "description": "Get a practical introduction to React Native, the JavaScript framework for writing and deploying fully featured mobile apps that look and feel native. With this hands-on guide, you’ll learn how to build applications that target iOS, Android, and other mobile platforms instead of browsers. You’ll also discover how to access platform features such as the camera, user location, and local storage. With code examples and step-by-step instructions, author Bonnie Eisenman shows web developers and frontend engineers how to build and style interfaces, use mobile components, and debug and deploy apps. Along the way, you’ll build several increasingly sophisticated sample apps with React Native before putting everything together at the end. Learn how React Native provides an interface to native UI components Examine how the framework uses native components analogous to HTML elements Create and style your own React Native components and applications Install modules for APIs and features not supported by the framework Get tools for debugging your code, and for handling issues outside of JavaScript Put it all together with the Zebreto effective-memorization flashcard app Deploy apps to the iOS App Store and Google’s Play Store",
+      "date": "2022-3-30/0:15:22",
+      "lastModification": "2022-3-30/0:15:22",
+      "id": 4
+    },
+    {
+      "seller": "emoto",
+      "sellerId": 8,
+      "condition": 2,
+      "price": 5,
+      "imgUrl": "http://books.google.com/books/content?id=mj-eAgAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
+      "title": "Time to React",
+      "authors": [
+        "Heidi Hardt"
+      ],
+      "publisher": "Oxford University Press",
+      "year": "2014-01-03",
+      "categories": [
+        "Political Science"
+      ],
+      "description": "In conflict-affected regions, delays in international response can have life or death consequences. The speed with which international organizations react to crises affects the prospects for communities to re-establish peace. Why then do some international organizations take longer than others to answer calls for intervention? To answer this question and explore options for reform, Time to React builds on contemporary scholarship with original data on response rates and interview evidence from 50 ambassadors across four leading organizations (AU, EU, OAS and OSCE). The explanation for variation in speed ultimately lies in core differences in institutional cultures across organizations. Although wealth and capabilities can strengthen a peace operation, it is the unspoken rules and social networks of peace and security committees at these organizations that dictate the pace with which an operation is established. This book offers a first analysis of the critical importance of and conditions shaping timeliness of crisis response by international organizations.",
+      "date": "2022-3-30/0:23:29",
+      "lastModification": "2022-3-30/0:23:29",
+      "id": 5
     }
   ]
 }
