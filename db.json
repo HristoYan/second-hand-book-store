@@ -1,19 +1,6 @@
 {
   "users": [
     {
-      "id": 1,
-      "name": "Default",
-      "username": "admin",
-      "password": "mitko12/3",
-      "gender": "Male",
-      "role": "ADMIN",
-      "imgUrl": "https://as2.ftcdn.net/v2/jpg/01/19/32/93/1000_F_119329387_sUTbUdeyhk0nuhNw5WaFvOyQFmxeppjX.jpg",
-      "short description": "text text text",
-      "status": "ACTIVE",
-      "date": "2022-3-19/11:51:53",
-      "lastModification": "2022-3-19/11:51:53"
-    },
-    {
       "name": "emo",
       "username": "emoto",
       "password": "re12+fjk",
@@ -85,6 +72,46 @@
       ],
       "description": "Java For Artists: The Art, Philosophy, and Science of Object-Oriented Programming is a Java programming language text/tradebook that targets beginner and intermediate Java programmers.",
       "id": 1
+    },
+    {
+      "seller": "Hristoyan",
+      "sellerId": 18,
+      "condition": 4,
+      "price": 11,
+      "imgUrl": "http://books.google.com/books/content?id=4RChxt67lvwC&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
+      "title": "JavaScript",
+      "authors": [
+        "David Flanagan"
+      ],
+      "publisher": "O'Reilly Media, Inc.",
+      "year": "2011-04-25",
+      "categories": [
+        "Computers"
+      ],
+      "description": "A revised and updated edition offers comprehensive coverage of ECMAScript 5 (the new JavaScript language standard) and also the new APIs introduced in HTML5, with chapters on functions and classes completely rewritten and updated to match current best practices and a new chapter on language extensions and subsets. Original.",
+      "date": "2022-3-29/20:5:14",
+      "lastModification": "2022-3-29/20:5:14",
+      "id": 2
+    },
+    {
+      "seller": "Hristoyan",
+      "sellerId": 18,
+      "condition": 3,
+      "price": 10,
+      "imgUrl": "http://books.google.com/books/content?id=nBuA0hmspdMC&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
+      "title": "Effective JavaScript",
+      "authors": [
+        "David Herman"
+      ],
+      "publisher": "Addison-Wesley",
+      "year": "2012-11-26",
+      "categories": [
+        "Computers"
+      ],
+      "description": "It’s uncommon to have a programming language wonk who can speak in such comfortable and friendly language as David does. His walk through the syntax and semantics of JavaScript is both charming and hugely insightful; reminders of gotchas complement realistic use cases, paced at a comfortable curve. You’ll find when you finish the book that you’ve gained a strong and comprehensive sense of mastery.” —Paul Irish, developer advocate, Google Chrome “This is not a book for those looking for shortcuts; rather it is hard-won experience distilled into a guided tour. It’s one of the few books on JS that I’ll recommend without hesitation.” —Alex Russell, TC39 member, software engineer, Google In order to truly master JavaScript, you need to learn how to work effectively with the language’s flexible, expressive features and how to avoid its pitfalls. No matter how long you’ve been writing JavaScript code, Effective JavaScript will help deepen your understanding of this powerful language, so you can build more predictable, reliable, and maintainable programs.",
+      "date": "2022-3-29/21:4:12",
+      "lastModification": "2022-3-29/21:4:12",
+      "id": 3
     }
   ]
 }

@@ -1,16 +1,17 @@
 import React from 'react';
 import { useFormik } from 'formik';
 import * as Yup from 'yup';
-import { csvToArray } from "../../utils";
+import { csvToArray } from "../utilities/convert";
 import { useUser } from '../../hooks/useUser';
 import { useNavigate } from 'react-router-dom';
 
-export const AddBookForm = ({ initialValue, ...props }) => {
+export const AddBookForm = ({ onBookSubmit }) => {
     const { user } = useUser();
     const today = new Date();
     const date = today.getFullYear() + '-' + (today.getMonth() + 1) + '-' + today.getDate();
     const time = today.getHours() + ':' + today.getMinutes() + ':' + today.getSeconds();
     const dateTime = date + '/' + time;
+
     const navigate = useNavigate();
 
     const formik = useFormik({
@@ -29,9 +30,7 @@ export const AddBookForm = ({ initialValue, ...props }) => {
             bookId: Number,
             date: dateTime,
             lastModification: dateTime,
-            ...initialValue,
-            // tags: Array.isArray(initialValue?.tags) ? initialValue.tags.join(", ") : "",
-            // products: Array.isArray(initialValue?.products) ? initialValue.products.join(", ") : "",
+            
         },
 
         validationSchema: Yup.object().shape({
@@ -64,17 +63,17 @@ export const AddBookForm = ({ initialValue, ...props }) => {
         }),
 
         onSubmit: async (values) => {
-            const recipe = { ...values };
-            recipe.tags = csvToArray(recipe.tags);
-            recipe.products = csvToArray(recipe.products);
-            props.onSubmitRecipe(recipe);
-            navigate("/main");
+            const book = { ...values };
+            book.authors = csvToArray(book.authors);
+            book.categories = csvToArray(book.categories);
+            onBookSubmit(book);
+            navigate("/");
         }
     })
 
     return (
         <form onSubmit={formik.handleSubmit} onReset={formik.handleReset}>
-            <h2 style={{ color: "#2196F3", margin: "50px" }}>Share Your Favorite Recipe</h2>
+            <h2 style={{ color: "#2196F3", margin: "50px" }}>Book To Sell</h2>
             <div className="container">
                 <div className="row">
                     <div className="input-field col s12">
@@ -115,7 +114,7 @@ export const AddBookForm = ({ initialValue, ...props }) => {
                 <div className="row">
                     <div className="input-field col s12">
                         <input id="authors" name='authors' type="text" className="validate" value={formik.values.authors} onChange={formik.handleChange} onBlur={formik.handleBlur} />
-                        <label htmlFor="authors">Title</label>
+                        <label htmlFor="authors">Authors</label>
                         <span className="helper-text" data-error="wrong" data-success="right">Helper text</span>
                     </div>
                 </div>
@@ -156,7 +155,7 @@ export const AddBookForm = ({ initialValue, ...props }) => {
                 </div>
                 {formik.touched.categories && formik.errors.categories ? <p>{formik.errors.categories}</p> : null}
 
-                <div className="recipe-submit-buttons">
+                <div className="book-submit-buttons">
                     <button className="btn waves-effect waves-light" type="submit" name="action">Submit
                         <i className="material-icons right">send</i>
                     </button>

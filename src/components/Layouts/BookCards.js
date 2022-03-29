@@ -1,6 +1,18 @@
 import React from 'react';
-import './BookCard.css'
-const BookCards = ({ book }) => {
+import './BookCard.css';
+import { useUser } from '../../hooks/useUser';
+// import { useNavigate, useParams } from 'react-router-dom';
+
+const BookCards = ({ book, onDeleteBook, onEditBook }) => {
+    const { user } = useUser();
+    const userId = user?.id;
+    // const navigate = useNavigate();
+    // const params = useParams();
+
+    // const onCookClick = () => {
+    //     onRecipeSelect();
+    //     navigate(`/recipes/${params.recipeId}`);
+    // }
     return (
         <div className="card col s12 m4" style={{ height: "600px" }}>
             <div className="card-image waves-effect waves-block waves-light">
@@ -20,12 +32,12 @@ const BookCards = ({ book }) => {
             </div>
             <div>
                 {/* <button className='navButon' onClick={onCookClick}>See More</button> */}
-                {/* {user && <button className='navButon' onClick={() => onAddingFavorite(recipe)}>Favorite</button>}
-        {(userId === recipe.authorId || user?.role === "Admin") && <div>
-            <button className='navButon' onClick={() => deleteRecipe(recipe.id)}>Delete</button>
-            <button className='navButon' onClick={() => onRecipeEdit(recipe)}>Edit</button>
+                {/* {user && <button className='navButon' onClick={() => onAddingFavorite(recipe)}>Favorite</button>} */}
+        {(userId === book.sellerId || user?.role === "Admin") && <div>
+            <button className='navButon' onClick={() => onDeleteBook(book.id)}>Delete</button>
+            <button className='navButon' onClick={() => onEditBook(book)}>Edit</button>
         </div>
-        } */}
+        }
             </div>
         </div >
     )

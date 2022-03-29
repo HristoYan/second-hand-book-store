@@ -1,0 +1,1 @@
+export const csvToArray = (csvString) => csvString.toString().split(",").map(value => value.trim());
