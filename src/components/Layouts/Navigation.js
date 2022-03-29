@@ -34,7 +34,7 @@ const Nav = () => {
           </NavLink>)}
 
         <ul>
-          {isSeller || isAdmin && (
+          {isSeller || isAdmin ? (
             <>
               <li> <NavLink
                 to="/add-book"
@@ -44,12 +44,13 @@ const Nav = () => {
               </NavLink></li>
               <li>
                 <NavLink
-                  to="/myBooks"
+                  to="/my-books"
                   className={({ isActive }) =>
                     isActive ? activeClassName : undefined}>
                   My Books
-                </NavLink></li>
-            </>)
+                </NavLink></li> 
+                
+            </>): undefined
           }
           {user && (
             <>

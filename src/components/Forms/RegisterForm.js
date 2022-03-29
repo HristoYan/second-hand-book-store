@@ -1,7 +1,6 @@
 import React from 'react';
 import { useFormik } from 'formik';
 import * as Yup from 'yup';
-// import './SignUpForm.css';
 import userApiClient from '../../services/user-api-client';
 import { useUser } from '../../hooks/useUser';
 import { useNavigate } from 'react-router-dom';
@@ -50,17 +49,17 @@ export const RegisterForm = () => {
                 .url('Invalid URL')
                 .required('Required'),
             short_description: Yup.string()
-                .max(512, 'Too Long')
-                .required('Required'),
+                .max(512, 'Too Long'),
             status: Yup.string()
                 .oneOf(['Active', 'Suspended', 'Deactivated'])
                 .required('Required'),
 
         }),
         onSubmit: async (values) => {
+            console.log(values);
             const response = await userApiClient.postNewUser(values);
             logIn(response);
-            navigate("/main");
+            navigate("/");
         }
     });
 
@@ -75,6 +74,7 @@ export const RegisterForm = () => {
                     </div>
                 </div>
                 {formik.touched.name && formik.errors.name ? <p>{formik.errors.name}</p> : null}
+
                 <div className="row">
                     <div className="input-field col s12">
                         <input id="username" name='username' type="text" placeholder='Username' className="validate" value={formik.values.username} onChange={formik.handleChange} onBlur={formik.handleBlur} />

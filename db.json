@@ -18,7 +18,7 @@
       "username": "emoto",
       "password": "re12+fjk",
       "gender": "Male",
-      "role": "User",
+      "role": "Seller",
       "imgUrl": "https://www.google.com/search?q=user+picture&rlz=1C1GCEA_enBG899BG899&sxsrf=APq-WBuhb6RrrISH0BeZkxxPGcTRFhqYqQ:1647517921666&tbm=isch&source=iu&ictx=1&vet=1&fir=iH9z_7R9D1tBpM%252Cew2HyCuyXyCJVM%252C_%253BoPiqei7vEbI03M%252CwLMr0fedobi8RM%252C_%253BdzPYWaGt8jz9-M%252CxyV8ddqOau4KMM%252C_%253B5EMYCfbP3D3XuM%252Cwm3m253FOCCAUM%252C_%253B4kXGls3qUNG46M%252Cu1SY3va6wsUW9M%252C_%253B3ieVDLEJVcWu5M%252CTMbHzRmYG8eIVM%252C_%253BP6AlQsrs5ks3RM%252CnKbZ7-T8tpkWLM%252C_%253BIVgx2CC_VChlFM%252CwLMr0fedobi8RM%252C_%253BKnR9uI1e8d4qTM%252CIuY_NaZ2k4MpJM%252C_%253BueMBUzW4NL-4tM%252Cq1IN7PDsfewqvM%252C_%253BtV2S8z0k2PPDeM%252Cu9EZShJE4IdRWM%252C_%253BSBUlgl2FWFFpQM%252CvEf3EbQkmklkOM%252C_%253BU5mCZ0cpcTzm6M%252CODve1aLLFZNQtM%252C_%253Br4lOs3e6dvbhdM%252CY1DbB5Ujc_VfgM%252C_%253BNu3vaVv-iagK0M%252CY1DbB5Ujc_VfgM%252C_%253BY0eNQ2lGEEKWAM%252Cq1IN7PDsfewqvM%252C_&usg=AI4_-kS1yyhE0DDGKcbbTsyoGKPVzvqInA&sa=X&ved=2ahUKEwiYlO3Dis32AhXkQvEDHfTNA3UQ9QF6BAgDEAE#imgrc=iH9z_7R9D1tBpM",
       "short_description": "short and fat but happy",
       "status": "Active",
@@ -51,6 +51,19 @@
       "date": "2022-3-22/21:13:50",
       "lastModification": "2022-3-22/21:13:50",
       "id": 19
+    },
+    {
+      "name": "kiro",
+      "username": "kiroto",
+      "password": "re12+fjk",
+      "gender": "Male",
+      "role": "Seller",
+      "imgUrl": "https://imgs.search.brave.com/9iEa5GKW7YlkzxhvK3uxShAZnMEyPmg_5Rxzp8y90E4/rs:fit:474:225:1/g:ce/aHR0cHM6Ly90c2Ux/Lm1tLmJpbmcubmV0/L3RoP2lkPU9JUC5Y/VlFodzN6V2tpenU2/TEdtRXZBbXF3SGFI/YSZwaWQ9QXBp",
+      "short_description": "",
+      "status": "Active",
+      "date": "2022-3-29/11:52:29",
+      "lastModification": "2022-3-29/11:52:29",
+      "id": 20
     }
   ],
   "books": [

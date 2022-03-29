@@ -29,7 +29,7 @@ export const LogInForm = () => {
             const response = await userApiClient.fetchUsers();
             const theOne = Array.from(response).filter(obj => obj.username == values.username && obj.password == values.password);
             logIn(theOne[0]);
-            navigate("/main");
+            navigate("/");
 
         }
     })
