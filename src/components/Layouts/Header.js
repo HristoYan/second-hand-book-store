@@ -5,7 +5,7 @@ import { useUser } from '../../hooks/useUser';
 const Header = ({ setTags }) => {
     const navigate = useNavigate();
     const user = useUser();
-
+    console.log(user.user);
     const tags = document.getElementById('explore');
     function explore() {
         let tagsToString;
@@ -27,7 +27,7 @@ const Header = ({ setTags }) => {
             <div className="row center">
                 <h5 className="header col s12 light">A modern way to get rid of your old books and make room for "NEW" ones</h5>
             </div>
-            {!!user && <>
+            {user.user && <>
                 <div className="row center">
                     <input type="text" id="explore" name="Explore" placeholder="Key Words Separeted By comma (,)" />
                 </div>

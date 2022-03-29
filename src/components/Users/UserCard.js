@@ -4,7 +4,7 @@ export const UserCard = ({ onEditClick, onDeleteClick, ...user }) => {
     const { name, imgUrl, gender, username, role, short_description } = user;
 
     return (
-        <div className="card col m3" style={{ width: "500px", height: "500px", "margin": "10px", flexShrink: "0" }}>
+        <div className="card col m3" style={{ width: "370px", height: "500px", "margin": "10px", flexShrink: "0" }}>
             <div className="card-content">
                 <img className="user-img" src={imgUrl} alt="User Picture" />
 

@@ -5,12 +5,12 @@
       "username": "emoto",
       "password": "re12+fjk",
       "gender": "Male",
-      "role": "Seller",
-      "imgUrl": "https://www.google.com/search?q=user+picture&rlz=1C1GCEA_enBG899BG899&sxsrf=APq-WBuhb6RrrISH0BeZkxxPGcTRFhqYqQ:1647517921666&tbm=isch&source=iu&ictx=1&vet=1&fir=iH9z_7R9D1tBpM%252Cew2HyCuyXyCJVM%252C_%253BoPiqei7vEbI03M%252CwLMr0fedobi8RM%252C_%253BdzPYWaGt8jz9-M%252CxyV8ddqOau4KMM%252C_%253B5EMYCfbP3D3XuM%252Cwm3m253FOCCAUM%252C_%253B4kXGls3qUNG46M%252Cu1SY3va6wsUW9M%252C_%253B3ieVDLEJVcWu5M%252CTMbHzRmYG8eIVM%252C_%253BP6AlQsrs5ks3RM%252CnKbZ7-T8tpkWLM%252C_%253BIVgx2CC_VChlFM%252CwLMr0fedobi8RM%252C_%253BKnR9uI1e8d4qTM%252CIuY_NaZ2k4MpJM%252C_%253BueMBUzW4NL-4tM%252Cq1IN7PDsfewqvM%252C_%253BtV2S8z0k2PPDeM%252Cu9EZShJE4IdRWM%252C_%253BSBUlgl2FWFFpQM%252CvEf3EbQkmklkOM%252C_%253BU5mCZ0cpcTzm6M%252CODve1aLLFZNQtM%252C_%253Br4lOs3e6dvbhdM%252CY1DbB5Ujc_VfgM%252C_%253BNu3vaVv-iagK0M%252CY1DbB5Ujc_VfgM%252C_%253BY0eNQ2lGEEKWAM%252Cq1IN7PDsfewqvM%252C_&usg=AI4_-kS1yyhE0DDGKcbbTsyoGKPVzvqInA&sa=X&ved=2ahUKEwiYlO3Dis32AhXkQvEDHfTNA3UQ9QF6BAgDEAE#imgrc=iH9z_7R9D1tBpM",
+      "role": "Admin",
+      "imgUrl": "https://imgs.search.brave.com/rqBQ7uBVTUUQSqq4Ub2AULJzD3_c78hVRPODo93Gm5U/rs:fit:478:225:1/g:ce/aHR0cHM6Ly90c2Uy/Lm1tLmJpbmcubmV0/L3RoP2lkPU9JUC55/QjFxRUdUR2c1R09I/M2FOdG8yS1Z3SGFI/VyZwaWQ9QXBp",
       "short_description": "short and fat but happy",
       "status": "Active",
       "date": "2022-3-19/11:51:53",
-      "lastModification": "2022-3-25/10:29:46",
+      "lastModification": "2022-3-29/21:23:57",
       "id": 8
     },
     {
@@ -27,8 +27,8 @@
       "id": 18
     },
     {
-      "name": "martina",
-      "username": "martito",
+      "name": "Martina",
+      "username": "Martito",
       "password": "passwodr123+",
       "gender": "Female",
       "role": "Admin",
@@ -36,7 +36,7 @@
       "short_description": "angry and stuborn",
       "status": "Active",
       "date": "2022-3-22/21:13:50",
-      "lastModification": "2022-3-22/21:13:50",
+      "lastModification": "2022-3-29/21:22:37",
       "id": 19
     },
     {

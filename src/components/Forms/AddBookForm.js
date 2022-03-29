@@ -4,6 +4,7 @@ import * as Yup from 'yup';
 import { csvToArray } from "../utilities/convert";
 import { useUser } from '../../hooks/useUser';
 import { useNavigate } from 'react-router-dom';
+import "../utilities/styleH2.css"
 
 export const AddBookForm = ({ onBookSubmit }) => {
     const { user } = useUser();
@@ -73,7 +74,7 @@ export const AddBookForm = ({ onBookSubmit }) => {
 
     return (
         <form onSubmit={formik.handleSubmit} onReset={formik.handleReset}>
-            <h2 style={{ color: "#2196F3", margin: "50px" }}>Book To Sell</h2>
+            <h2>Book To Sell</h2>
             <div className="container">
                 <div className="row">
                     <div className="input-field col s12">

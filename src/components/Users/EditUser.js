@@ -22,7 +22,7 @@ export const EditUser = ({ user }) => {
             gender: Yup.string()
                 .oneOf(['Male', 'Female']),
             role: Yup.string()
-                .oneOf(['User', 'Admin']),
+            .oneOf(['Reader', 'Seller', 'Admin']),
             imgUrl: Yup.string()
                 .url('Invalid URL'),
             short_description: Yup.string()
@@ -33,7 +33,7 @@ export const EditUser = ({ user }) => {
         }),
         onSubmit: async (values) => {
             await userApiClient.putUpdateUser(values);
-            navigate("/");
+            navigate("/users");
         }
     });
 
@@ -77,8 +77,14 @@ export const EditUser = ({ user }) => {
                         Role
                         <p>
                             <label>
-                                <input checked={formik.values.role === "User"} name="role" type="radio" value={"User"} onChange={formik.handleChange("role")} onBlur={formik.handleBlur} />
-                                <span>User</span>
+                                <input checked={formik.values.role === "Reader"} name="role" type="radio" value={"Reader"} onChange={formik.handleChange("role")} onBlur={formik.handleBlur} />
+                                <span>Reader</span>
+                            </label>
+                        </p>
+                        <p>
+                            <label>
+                                <input checked={formik.values.role === "Seller"} name="role" type="radio" value={"Seller"} onChange={formik.handleChange("role")} onBlur={formik.handleBlur} />
+                                <span>Seller</span>
                             </label>
                         </p>
                         <p>

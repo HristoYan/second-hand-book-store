@@ -21,7 +21,7 @@ const Nav = () => {
     <nav className="light-blue lighten-1" role="navigation">
       <div className="nav-wrapper container">
         {user ? (<NavLink
-          to="/main">
+          to="/">
           <span id="logo-container" href="#" className="brand-logo">
             <span className="large material-icons" >book</span>
           </span>

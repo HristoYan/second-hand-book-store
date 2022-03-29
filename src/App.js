@@ -13,7 +13,8 @@ import { LogInForm } from './components/Forms/LogInForm';
 import { Users } from './components/Users/Users';
 import { EditUser } from './components/Users/EditUser';
 import { AddBookForm } from './components/Forms/AddBookForm';
-import {EditBookForm} from './components/Forms/EditBookForm'
+import {EditBookForm} from './components/Forms/EditBookForm';
+import MyBooks from './components/Layouts/MyBooks';
 
 function App() {
   const [tags, setTags] = useState();
@@ -118,6 +119,7 @@ function App() {
           <Route path='/edit-user' element={<EditUser user={userToEdit} />} />
           <Route path='/add-book' element={<AddBookForm onBookSubmit={handleSubmitBook("add")} />} />
           <Route path='/edit-book' element={<EditBookForm onBookSubmit={handleSubmitBook("edit")} />} />
+          <Route path='/my-books' element={<MyBooks books={books} onDeleteBook={deleteBook} onEditBook={editBook}/>} />
 
         </Routes>
         <Footer />
