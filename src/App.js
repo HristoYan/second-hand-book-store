@@ -30,8 +30,8 @@ function App() {
   const navigate = useNavigate();
 
   function clearMessagesAndErrors() {
-    setErrors = undefined;
-    setMessages = undefined;
+    setErrors(undefined);
+    setMessages(undefined);
   }
 
   useEffect(() => {
