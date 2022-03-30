@@ -1,13 +1,20 @@
 import React from 'react';
 import './BookCards.css';
 import { useUser } from '../../hooks/useUser';
-// import { useNavigate, useParams } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 
-const BookCards = ({ book, onDeleteBook, onEditBook }) => {
+const BookCards = ({ book, onDeleteBook, onEditBook, setFavorite }) => {
     const { user } = useUser();
     const userId = user?.id;
-    // const navigate = useNavigate();
+    const navigate = useNavigate();
     // const params = useParams();
+    
+    function onAddingFavorite() {
+        
+        console.log(`Book Favorite: ${book.id}`);
+        setFavorite(book.id);
+        navigate("/favorites");
+    }
 
     // const onCookClick = () => {
     //     onRecipeSelect();
@@ -33,7 +40,7 @@ const BookCards = ({ book, onDeleteBook, onEditBook }) => {
             </div>
             <div>
                 {/* <button className='navButon' onClick={onCookClick}>See More</button> */}
-                {/* {user && <button className='navButon' onClick={() => onAddingFavorite(recipe)}>Favorite</button>} */}
+                {(user && userId !== book.sellerId) && <button className='navButon' onClick={onAddingFavorite}>Favorite</button>}
                 {(userId === book.sellerId || user?.role === "Admin") && <div>
                     <button className='navButon' onClick={() => onDeleteBook(book.id)}>Delete</button>
                     <button className='navButon' onClick={() => onEditBook(book)}>Edit</button>

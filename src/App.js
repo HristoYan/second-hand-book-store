@@ -16,6 +16,9 @@ import { AddBookForm } from './components/Forms/AddBookForm';
 import {EditBookForm} from './components/Forms/EditBookForm';
 import MyBooks from './components/Layouts/MyBooks';
 import { GBookToSellForm } from './components/Forms/GBookToSellForm';
+import Favorites from './components/Layouts/Favorites';
+import {useUser} from './hooks/useUser';
+import userApiClient from './services/user-api-client';
 
 function App() {
   const [tags, setTags] = useState();
@@ -23,9 +26,21 @@ function App() {
   const [books, setBooks] = useState([]);
   const [userToEdit, setUserToEdit] = useState();
   const [bookToSell, setBookToSell] = useState();
+  const [users, setUsers] = useState([]);
+  const [favorite, setFavorite] = useState();
+  let [userFav, setUserFav] = useState([]);
   const [bookToEdit, setBookToEdit] = useState();
   const [errors, setErrors] = useState();
   const [messages, setMessages] = useState();
+  const {user} = useUser();
+  userFav = user.favorite;
+
+
+  useEffect(async () => {
+      const userList = await userApiClient.fetchUsers();
+      console.log(userList);
+      setUsers(userList);
+  }, []);
 
   const navigate = useNavigate();
 
@@ -33,7 +48,19 @@ function App() {
     setErrors(undefined);
     setMessages(undefined);
   }
+  console.log(favorite);
 
+
+  // useEffect(() => {
+  //   userFav.push(favorite);
+  //   console.log(userFav);
+  //   UserApi.putUpdateUser(userFav)
+  //   .then(rez => {
+  //     console.log(rez);
+  //     setFavorite(rez.favorites)
+  //   })
+  // }, [favorite])
+  
   useEffect(() => {
     BookApi.fetchBooksForSell()
       .then(results => {
@@ -49,10 +76,6 @@ function App() {
     console.log(tags);
     BookApi.fetchBooksFromGoogleApi(tags)
       .then(results => {
-        console.log(results);
-        console.log(results.items);
-        console.log(results.kind);
-        console.log(results.totalItems);
         setGBooks(results.items);
         console.log(gBooks);
         clearMessagesAndErrors();
@@ -104,9 +127,7 @@ function App() {
         })
     }
   }
-
-  console.log(`BookToSell: ${JSON.stringify(bookToSell)}`);
-
+  console.log(bookToSell);
   return (
     <>
       <div className="App">
@@ -117,14 +138,15 @@ function App() {
           <Route path='/register' element={<RegisterForm />} />
           <Route path='/login' element={<LogInForm />} />
 
-          <Route path='/' element={<Main books={books} onDeleteBook={deleteBook} onEditBook={editBook}/>} />
+          <Route path='/' element={<Main books={books} onDeleteBook={deleteBook} onEditBook={editBook} setFavorite={setFavorite}/>} />
           <Route path='/explore' element={<GBooks books={gBooks} setBookToSell={setBookToSell}/>} />
-          <Route path='/users' element={<Users onEditUser={editUser} onDeleteUser={deleteUser} />} />
+          <Route path='/users' element={<Users users={users} setUsers={setUsers} onEditUser={editUser} onDeleteUser={deleteUser} />} />
           <Route path='/edit-user' element={<EditUser user={userToEdit} />} />
           <Route path='/add-book' element={<AddBookForm onBookSubmit={handleSubmitBook("add")} />} />
           <Route path='/edit-book' element={<EditBookForm onBookSubmit={handleSubmitBook("edit")} />} />
           <Route path='/my-books' element={<MyBooks books={books} onDeleteBook={deleteBook} onEditBook={editBook}/>} />
           <Route path='/sell-gbook' element={<GBookToSellForm book={bookToSell} onBookSubmit={handleSubmitBook("add")} />} />
+          <Route path='/favorites' element={<Favorites users={users } books={books} favorite={favorite} />} />
 
 
         </Routes>

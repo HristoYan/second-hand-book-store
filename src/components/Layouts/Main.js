@@ -1,13 +1,13 @@
 import React from 'react';
 import BookList from './BooksList'
 
-const Main = ({books, onDeleteBook, onEditBook}) => {
+const Main = ({books, onDeleteBook, onEditBook, setFavorite}) => {
     return (
         <div className="container">
             <div className="section">
                 <h2 style={{ color: "#2196F3", margin: "50px" }}>Reading Time</h2>
                 <div className="row">
-                    <BookList  books={books} onDeleteBook={onDeleteBook} onEditBook={onEditBook}/>
+                    <BookList  books={books} onDeleteBook={onDeleteBook} onEditBook={onEditBook} setFavorite={setFavorite}/>
                 </div>
             </div>
         </div >

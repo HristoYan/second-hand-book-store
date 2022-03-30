@@ -3,14 +3,8 @@ import userApiClient from "../../services/user-api-client";
 // import { Loader } from "../Loader";
 import { UserCard } from "./UserCard";
 
-export const Users = ({ onEditUser, onDeleteUser }) => {
-    const [users, setUsers] = useState([]);
-
-    useEffect(async () => {
-        const userList = await userApiClient.fetchUsers();
-        console.log(userList);
-        setUsers(userList);
-    }, []);
+export const Users = ({ users, setUsers, onEditUser, onDeleteUser }) => {
+    
 
     async function onDeleteHandler(user) {
         await onDeleteUser(user.id);

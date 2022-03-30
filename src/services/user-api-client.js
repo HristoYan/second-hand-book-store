@@ -10,6 +10,10 @@ class UsersApiClient {
         return this.handleResponse(async () => fetch(USERS_API_BASE_URL + '/users'));
     }
 
+    async fetchUserById(userId) {
+        return this.handleResponse(async () => fetch(USERS_API_BASE_URL + `/users/${userId}`));
+    }
+
     async postNewUser(user) {
         return this.handleResponse(async () => fetch(USERS_API_BASE_URL + '/users', {
             headers: {
