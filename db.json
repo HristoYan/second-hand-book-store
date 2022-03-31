@@ -26,9 +26,10 @@
       "date": "2022-3-22/21:10:47",
       "lastModification": "2022-3-22/21:10:47",
       "favorite": [
-        1,
         4,
-        5
+        5,
+        6,
+        7
       ],
       "id": 18
     },
@@ -65,65 +66,6 @@
     {
       "seller": "emoto",
       "sellerId": 8,
-      "condition": 4,
-      "price": 10.99,
-      "imgUrl": "http://books.google.com/books/content?id=AcI6_aBD17sC&printsec=frontcover&img=1&zoom=1&edge=curl&imgtk=AFLRE728FmcZDcV7i_lJjsKXvlIYEBbAXH6PFCP-w5h7g9sagQr6K-ttl6nVHcHeGg_TkBs58vN7mSxJpiffsBpYIUoJaADRVcDcMXnY280h2EFTJyO14zkX6UCXK6q6G1e6UNmCy7-9&source=gbs_api",
-      "title": "Java for Artists",
-      "authors": [
-        "Rick Miller",
-        "Raffi Kasparian"
-      ],
-      "publisher": "Pulp Free Press",
-      "year": "2006",
-      "categories": [
-        "Computers / Programming / General"
-      ],
-      "description": "Java For Artists: The Art, Philosophy, and Science of Object-Oriented Programming is a Java programming language text/tradebook that targets beginner and intermediate Java programmers.",
-      "id": 1
-    },
-    {
-      "seller": "Hristoyan",
-      "sellerId": 18,
-      "condition": 4,
-      "price": 11,
-      "imgUrl": "http://books.google.com/books/content?id=4RChxt67lvwC&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
-      "title": "JavaScript",
-      "authors": [
-        "David Flanagan"
-      ],
-      "publisher": "O'Reilly Media, Inc.",
-      "year": "2011-04-25",
-      "categories": [
-        "Computers"
-      ],
-      "description": "A revised and updated edition offers comprehensive coverage of ECMAScript 5 (the new JavaScript language standard) and also the new APIs introduced in HTML5, with chapters on functions and classes completely rewritten and updated to match current best practices and a new chapter on language extensions and subsets. Original.",
-      "date": "2022-3-29/20:5:14",
-      "lastModification": "2022-3-29/20:5:14",
-      "id": 2
-    },
-    {
-      "seller": "Hristoyan",
-      "sellerId": 18,
-      "condition": 3,
-      "price": 10,
-      "imgUrl": "http://books.google.com/books/content?id=nBuA0hmspdMC&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
-      "title": "Effective JavaScript",
-      "authors": [
-        "David Herman"
-      ],
-      "publisher": "Addison-Wesley",
-      "year": "2012-11-26",
-      "categories": [
-        "Computers"
-      ],
-      "description": "It’s uncommon to have a programming language wonk who can speak in such comfortable and friendly language as David does. His walk through the syntax and semantics of JavaScript is both charming and hugely insightful; reminders of gotchas complement realistic use cases, paced at a comfortable curve. You’ll find when you finish the book that you’ve gained a strong and comprehensive sense of mastery.” —Paul Irish, developer advocate, Google Chrome “This is not a book for those looking for shortcuts; rather it is hard-won experience distilled into a guided tour. It’s one of the few books on JS that I’ll recommend without hesitation.” —Alex Russell, TC39 member, software engineer, Google In order to truly master JavaScript, you need to learn how to work effectively with the language’s flexible, expressive features and how to avoid its pitfalls. No matter how long you’ve been writing JavaScript code, Effective JavaScript will help deepen your understanding of this powerful language, so you can build more predictable, reliable, and maintainable programs.",
-      "date": "2022-3-29/21:4:12",
-      "lastModification": "2022-3-29/21:4:12",
-      "id": 3
-    },
-    {
-      "seller": "emoto",
-      "sellerId": 8,
       "condition": 5,
       "price": 20,
       "imgUrl": "http://books.google.com/books/content?id=274fCwAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
@@ -144,43 +86,102 @@
     {
       "seller": "emoto",
       "sellerId": 8,
+      "condition": 4,
+      "price": 12,
+      "imgUrl": "http://books.google.com/books/content?id=qGPTzAEACAAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api",
+      "title": "ASP.NET Core 3 and React",
+      "authors": [
+        "Cart Rippon"
+      ],
+      "year": "2019-12-27",
+      "categories": [
+        "Computers"
+      ],
+      "description": "Build modern, scalable, and cloud-ready single-page applications using ASP.NET Core, React, TypeScript, and Azure Key Features Explore the full potential and latest features of .NET Core 3.0, TypeScript 3, and React Learn how to manage data, application design, and packaging, and secure your web apps Discover best practices for using React and TypeScript to build a scalable frontend that interacts with REST APIs Book Description Microsoft's ASP.NET Core is a robust and high-performing cross-platform web API framework, and Facebook's React uses declarative JavaScript to drive a rich, interactive user experience on the client-side web. Together, they can be used to build full stack apps with enhanced security and scalability at each layer. This book will start by taking you through React and TypeScript components to build an intuitive single-page application. You'll understand how to design scalable REST APIs that can integrate with a React-based frontend. You'll get to grips with the latest features, popular patterns, and tools available in the React ecosystem, including function-based components, React Router, and Redux. The book shows how you can use TypeScript along with React to make the frontend robust and maintainable. You'll then cover important .NET Core features such as API controllers, attribute routing, and model binding to help you build a sturdy backend. Additionally, you'll explore API security with ASP.NET Core identity and authorization policies, and write reliable unit tests using both .NET Core and React before you deploy your app to the Azure cloud. By the end of the book, you'll have gained all the knowledge you need to enhance your C# and JavaScript skills and build full stack, production-ready applications with ASP.NET Core and React. What you will learn Build RESTful APIs with .NET Core using API controllers Create strongly typed, interactive, and function-based React components using Hooks Build forms efficiently using reusable React components Perform client-side state management with Redux and the React Context API Secure REST APIs with ASP.NET identity and authorization policies Run a range of automated tests on the frontend and backend Implement continuous integration (CI) and continuous delivery (CD) processes into Azure using Azure DevOps Who this book is for If you're a web developer looking to build solid full-stack web applications with .NET Core and React, this book is for you. Although this book does not assume any knowledge of React, you're expected to have a basic understanding of .NET Core.",
+      "date": "2022-3-31/19:1:55",
+      "lastModification": "2022-3-31/19:1:55",
+      "id": 5
+    },
+    {
+      "seller": "emoto",
+      "sellerId": 8,
       "condition": 2,
       "price": 5,
-      "imgUrl": "http://books.google.com/books/content?id=mj-eAgAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
-      "title": "Time to React",
+      "imgUrl": "http://books.google.com/books/content?id=XCLhDwAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
+      "title": "React and React Native",
       "authors": [
-        "Heidi Hardt"
+        "Adam Boduch",
+        "Roy Derks"
       ],
-      "publisher": "Oxford University Press",
-      "year": "2014-01-03",
+      "publisher": "Packt Publishing Ltd",
+      "year": "2020-04-30",
       "categories": [
-        "Political Science"
+        "Computers"
       ],
-      "description": "In conflict-affected regions, delays in international response can have life or death consequences. The speed with which international organizations react to crises affects the prospects for communities to re-establish peace. Why then do some international organizations take longer than others to answer calls for intervention? To answer this question and explore options for reform, Time to React builds on contemporary scholarship with original data on response rates and interview evidence from 50 ambassadors across four leading organizations (AU, EU, OAS and OSCE). The explanation for variation in speed ultimately lies in core differences in institutional cultures across organizations. Although wealth and capabilities can strengthen a peace operation, it is the unspoken rules and social networks of peace and security committees at these organizations that dictate the pace with which an operation is established. This book offers a first analysis of the critical importance of and conditions shaping timeliness of crisis response by international organizations.",
-      "date": "2022-3-30/0:23:29",
-      "lastModification": "2022-3-30/0:23:29",
-      "id": 5
+      "description": "Get up to speed with React, React Native, GraphQL and Apollo for building cross-platform native apps with the help of practical examples Key Features Covers the latest features of React such as Hooks, Suspense, NativeBase, and Apollo in this updated third edition Get to grips with the React architecture for writing easy-to-manage web and mobile applications Understand GraphQL and Apollo for building a scalable backend for your cross-platform apps Book Description React and React Native, Facebook’s innovative User Interface (UI) libraries, are designed to help you build robust cross-platform web and mobile applications. This updated third edition is improved and updated to cover the latest version of React. The book particularly focuses on the latest developments in the React ecosystem, such as modern Hook implementations, code splitting using lazy components and Suspense, user interface framework components using Material-UI, and Apollo. In terms of React Native, the book has been updated to version 0.62 and demonstrates how to apply native UI components for your existing mobile apps using NativeBase. You will begin by learning about the essential building blocks of React components. Next, you’ll progress to working with higher-level functionalities in application development, before putting this knowledge to use by developing user interface components for the web and for native platforms. In the concluding chapters, you’ll learn how to bring your application together with a robust data architecture. By the end of this book, you’ll be able to build React applications for the web and React Native applications for multiple mobile platforms. What you will learn Delve into the React architecture, component properties, state, and context Get to grips with React Hooks for handling functions and components Implement code splitting in React using lazy components and Suspense Build robust user interfaces for mobile and desktop apps using Material-UI Write shared components for Android and iOS mobile apps using React Native Simplify layout design for React Native apps using NativeBase Write GraphQL schemas to power web and mobile apps Implement web and mobile components that are driven by Apollo Who this book is for This book is for any JavaScript developer who wants to start learning how to use Facebook’s UI libraries, React and React Native, for mobile and web application development. Although no prior knowledge of React is needed, working knowledge of JavaScript programming will help you understand the concepts covered in the book more effectively.",
+      "date": "2022-3-31/19:2:18",
+      "lastModification": "2022-3-31/19:2:18",
+      "id": 6
+    },
+    {
+      "seller": "emoto",
+      "sellerId": 8,
+      "condition": 5,
+      "price": 20,
+      "imgUrl": "http://books.google.com/books/content?id=c4sIJMJhd84C&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
+      "title": "Въведение в програмирането с Java",
+      "authors": [
+        "Светлин Наков и колектив"
+      ],
+      "publisher": "Faber Publishing",
+      "year": "2009-10-20",
+      "categories": [
+        "Computers"
+      ],
+      "description": "Безплатната книга \"Въведение в програмирането с Java\" предоставя на начинаещите програмисти стабилна основа от фундаментални знания без значение от езика за програмиране. Тя обхваща фундаменталните основи на програмирането, които не са се променили съществено през последните 10-15 години. Учебното съдържание е разработено от авторитетен авторски колектив под ръководството на Светлин Наков от Софтуерния университет (СофтУни) и покрива както начални теми като променливи, условни конструкции, цикли и масиви, така и по-сложни концепции като структури от данни (списъци, стекове, опашки, дървета, хеш-таблици и други), рекурсия и рекурсивни алгоритми, обектно-ориентирано програмиране и качествен програмен код. От книгата ще научите как да мислите и разсъждавате като програмисти и как ефективно и качествено да решавате задачи по програмиране. Ще овладеете фундаменталните принципи на програмирането и основните структури от данни и алгоритми, без които не можете да станете софтуерен инженер. Книгата е на български език с обем 962 страници и се разпространява безплатно в електронен формат, както и в печатен вариант на хартия. Официален уеб сайт: http://www.introprogramming.info/intro-java-book/",
+      "date": "2022-3-31/19:2:48",
+      "lastModification": "2022-3-31/19:2:48",
+      "id": 7
+    },
+    {
+      "seller": "emoto",
+      "sellerId": 8,
+      "condition": 3,
+      "price": 15,
+      "imgUrl": "http://books.google.com/books/content?id=RRLmDwAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
+      "title": "The Road to React",
+      "authors": [
+        "Robin Wieruch"
+      ],
+      "publisher": "Robin Wieruch",
+      "year": "2017-11-15",
+      "categories": [
+        "Computers"
+      ],
+      "description": "LAST UPDATE: 09. June 2021 If you are looking for a comprehensive and pragmatic yet concise and up-to-date React.js feat. Hooks book, the Road to React is for you. What you will learn. In \"The Road to React\" you will learn about all the fundamentals of React.js with Hooks while building a full-blown React application step by step. While you create the React application, every chapter will introduce you to a new React key feature. However, there is more than only the fundamentals: The book dives into related topics (e.g. React with TypeScript, Testing, Performance Optimizations) and advanced feature implementations like client- and server-side searching. At the end of the book, you will have a fully working deployed React application. Is it up to date? Programming books are usually outdated soon after their release, but since this book is self- published, I can update it as needed whenever a new version of something related to this book gets released. I am a beginner. Is this book for me? Yes. The book starts from zero and takes you through the learning experience step by step. Every chapter builds up on the learnings from the previous chapter. In addition, at the end of every chapter, exercises fortify your lessons learned. If you got stuck in a chapter, you will always find a reference URL to the status quo of the actual code. Core Concepts Pragmatic: Master React while building a complete application step by step. Problems Solving: You need to experience a problem first before solving it. The Why: Readers like how the book answers the Why, not only the How. Table of Contents Fundamentals of React Hello React Requirements Setting up a React Project Meet the React Component React JSX Lists in React Meet another React Component React Component Instantiation ReactDOM React Component Definition (Advanced) Handler Function in JSX React Props React State Callback Handlers in JSX Lifting State in React React Controlled Components Props Handling (Advanced) React Side-Effects React Custom Hooks (Advanced) React Fragments Reusable React Component React Component Composition Imperative React Inline Handler in JSX React Asynchronous Data React Conditional Rendering React Advanced State React Impossible States Data Fetching with React Data Re-Fetching in React Memoized Handler in React (Advanced) Explicit Data Fetching with React Third-Party Libraries in React Async/Await in React (Advanced) Forms in React React's Legacy React Class Components React Class Components: State Imperative React Styling in React CSS in React CSS Modules in React Styled Components in React SVGs in React React Maintenance Performance in React (Advanced) TypeScript in React Unit Testing to Integration Testing React Project Structure Real World React (Advanced) Sorting Reverse Sort Remember Last Searches Paginated Fetch Deploying a React Application Build Process Deploy to Firebase",
+      "date": "2022-3-31/19:3:26",
+      "lastModification": "2022-3-31/19:3:26",
+      "id": 8
     },
     {
       "seller": "Hristoyan",
       "sellerId": 18,
       "condition": 2,
-      "price": 7,
-      "imgUrl": "http://books.google.com/books/content?id=thLgzQEACAAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api",
-      "title": "React Cookbook",
+      "price": 5,
+      "imgUrl": "http://books.google.com/books/content?id=iEtazQEACAAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api",
+      "title": "React Js",
       "authors": [
-        "David Griffiths",
-        "Dawn Griffiths"
+        "Moaml Mohmmed",
+        "Max Beerbohm"
       ],
-      "publisher": "O'Reilly Media",
-      "year": "2021-08-31",
+      "year": "2020-01-30",
       "categories": [
-        "Computers"
+        ""
       ],
-      "description": "React helps you create and work on an app in just a few minutes. But learning how to put all the pieces together is hard. How do you validate a form? Or implement a complex multistep user action without writing messy code? How do you test your code? Make it reusable? Wire it to a backend? Keep it easy to understand? The React Cookbook delivers answers fast. Many books teach you how to get started, understand the framework, or use a component library with React, but very few provide examples to help you solve particular problems. This easy-to-use cookbook includes the example code developers need to unravel the most common problems when using React, categorized by topic area and problem. You'll learn how to: Build a single-page application in React using a rich UI Create progressive web applications that users can install and work with offline Integrate with backend services such as REST and GraphQL Automatically test for accessibility problems in your application Secure applications with fingerprints and security tokens using WebAuthn Deal with bugs and avoid common functional and performance problems",
-      "date": "2022-3-30/15:19:56",
-      "lastModification": "2022-3-30/15:19:56",
-      "id": 6
+      "description": "React jsThe Complete Beginner's Guide to React - 2nd Edition (2020)Facebook's React has changed the way we think about web applications and user interface development. Due to its design, you can use it beyond web. A feature known as the Virtual DOM enables this.In this chapter we'll go through some of the basic ideas behind the library so you understand React a little better before moving on.What is React?React is a JavaScript library that forces you to think in terms of components. This model of thinking fits user interfaces well. Depending on your background it might feel alien at first. You will have to think very carefully about the concept of state and where it belongs.Because state management is a difficult problem, a variety of solutions have appeared. In this book, we'll start by managing state ourselves and then push it to a Flux implementation known as Alt. There are also implementations available for several other alternatives, such as Redux, MobX, and Cerebral.React is pragmatic in the sense that it contains a set of escape hatches. If the React model doesn't work for you, it is still possible to revert back to something lower level. For instance, there are hooks that can be used to wrap older logic that relies on the DOM. This breaks the abstraction and ties your code to a specific environment, but sometimes that's the pragmatic thing to do.One of the fundamental problems of programming is how to deal with state. Suppose you are developing a user interface and want to show the same data in multiple places. How do you make sure the data is consistent?Historically we have mixed the concerns of the DOM and state and tried to manage it there. React solves this problem in a different way. It introduced the concept of the Virtual DOM to the masses.Virtual DOM exists on top of the actual DOM, or some other render target. It solves the state manipulation problem in its own way. Whenever changes are made to it, it figures out the best way to batch the changes to the underlying DOM structure. It is able to propagate changes across its virtual tree as in the image above.Virtual DOM PerformanceHandling the DOM manipulation this way can lead to increased performance. Manipulating the DOM by hand tends to be inefficient and is hard to optimize. By leaving the problem of DOM manipulation to a good implementation, you can save a lot of time and effort.React allows you to tune performance further by implementing hooks to adjust the way the virtual tree is updated. Though this is often an optional step.The biggest cost of Virtual DOM is that the implementation makes React quite big. You can expect the bundle sizes of small applications to be around 150-200 kB minified, React included. gzipping will help, but it's still big.",
+      "date": "2022-3-31/19:36:56",
+      "lastModification": "2022-3-31/19:36:56",
+      "id": 9
     }
   ]
 }

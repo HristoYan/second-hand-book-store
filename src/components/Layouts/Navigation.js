@@ -3,7 +3,7 @@ import { useUser } from '../../hooks/useUser';
 import './Navigation.css';
 import { NavLink, useNavigate } from "react-router-dom";
 
-const Nav = () => {
+const Nav = ({setUserToEdit}) => {
   const { user, logOut } = useUser();
 
   const isAdmin = user?.role === "Admin";
@@ -13,6 +13,11 @@ const Nav = () => {
   function onLogOut() {
     logOut();
     navigate("/");
+  }
+
+  function setUser() {
+    setUserToEdit(user);
+    navigate('/edit-user');
   }
 
   const activeClassName = "Nav-active";
@@ -55,7 +60,7 @@ const Nav = () => {
           {user && (
             <>
               <li> <NavLink
-                to="/favorite-books"
+                to="/favorites"
                 className={({ isActive }) =>
                   isActive ? activeClassName : undefined}>
                 Favorite
@@ -93,8 +98,15 @@ const Nav = () => {
           }
         </ul>
 
+        {user ? (<NavLink
+          to="/cart">
+          <span id="logo-container" href="#" className="brand-logo">
+            <span className="large material-icons" >shopping_cart</span>
+          </span>
+        </NavLink>) : undefined}
+
         <ul className="right hide-on-med-and-down">
-          {/* <li><a href="#" onClick={() => { setUserToEdit(user); navigate('/edit-user'); }}>{user?.username ?? "PLEASE REGISTER"}</a></li> */}
+          <li><a href='#' onClick={setUser}>{user?.username ?? "PLEASE REGISTER"}</a></li>
           {!!user && <li><a onClick={onLogOut} href="#">Log out</a></li>}
         </ul>
 

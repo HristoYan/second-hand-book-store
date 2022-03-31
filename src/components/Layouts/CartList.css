@@ -1,0 +1,13 @@
+#price h3{
+    display:inline-block;
+    color: #2196F3;
+    text-align: center;
+    margin-right: 40px;
+    margin-top: 20px;
+    margin-left: 350px;
+}
+
+button{
+    background-color: #2196F3;
+    text-align: center;
+}

@@ -19,6 +19,7 @@ import { GBookToSellForm } from './components/Forms/GBookToSellForm';
 import Favorites from './components/Layouts/Favorites';
 import {useUser} from './hooks/useUser';
 import userApiClient from './services/user-api-client';
+import Cart from './components/Layouts/Cart';
 
 function App() {
   const [tags, setTags] = useState();
@@ -28,13 +29,11 @@ function App() {
   const [bookToSell, setBookToSell] = useState();
   const [users, setUsers] = useState([]);
   const [favorite, setFavorite] = useState();
-  let [userFav, setUserFav] = useState([]);
+  const [cart, setCart] = useState([]);
   const [bookToEdit, setBookToEdit] = useState();
   const [errors, setErrors] = useState();
   const [messages, setMessages] = useState();
   const {user} = useUser();
-  userFav = user.favorite;
-
 
   useEffect(async () => {
       const userList = await userApiClient.fetchUsers();
@@ -49,17 +48,6 @@ function App() {
     setMessages(undefined);
   }
   console.log(favorite);
-
-
-  // useEffect(() => {
-  //   userFav.push(favorite);
-  //   console.log(userFav);
-  //   UserApi.putUpdateUser(userFav)
-  //   .then(rez => {
-  //     console.log(rez);
-  //     setFavorite(rez.favorites)
-  //   })
-  // }, [favorite])
   
   useEffect(() => {
     BookApi.fetchBooksForSell()
@@ -101,6 +89,8 @@ function App() {
 
   async function deleteBook(bookId) {
     BookApi.deleteBook(bookId);
+    setBooks(books.filter(book => book.id !== bookId));
+
     setMessages(`Book deleted successfully`)
   }
 
@@ -127,18 +117,19 @@ function App() {
         })
     }
   }
-  console.log(bookToSell);
+  console.log(cart);
+  
   return (
     <>
       <div className="App">
-        <Navigation />
+        <Navigation setUserToEdit={setUserToEdit}/>
         <Header setTags={setTags} />
 
         <Routes>
           <Route path='/register' element={<RegisterForm />} />
           <Route path='/login' element={<LogInForm />} />
 
-          <Route path='/' element={<Main books={books} onDeleteBook={deleteBook} onEditBook={editBook} setFavorite={setFavorite}/>} />
+          <Route path='/' element={<Main books={books} onDeleteBook={deleteBook} onEditBook={editBook} setFavorite={setFavorite} setCart={setCart} cart={cart}/>} />
           <Route path='/explore' element={<GBooks books={gBooks} setBookToSell={setBookToSell}/>} />
           <Route path='/users' element={<Users users={users} setUsers={setUsers} onEditUser={editUser} onDeleteUser={deleteUser} />} />
           <Route path='/edit-user' element={<EditUser user={userToEdit} />} />
@@ -146,7 +137,8 @@ function App() {
           <Route path='/edit-book' element={<EditBookForm onBookSubmit={handleSubmitBook("edit")} />} />
           <Route path='/my-books' element={<MyBooks books={books} onDeleteBook={deleteBook} onEditBook={editBook}/>} />
           <Route path='/sell-gbook' element={<GBookToSellForm book={bookToSell} onBookSubmit={handleSubmitBook("add")} />} />
-          <Route path='/favorites' element={<Favorites users={users } books={books} favorite={favorite} />} />
+          <Route path='/favorites' element={<Favorites users={users } books={books} favorite={favorite} setCart={setCart}/>} />
+          <Route path='/cart' element={<Cart cart={cart} />} />
 
 
         </Routes>

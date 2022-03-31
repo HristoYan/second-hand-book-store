@@ -1,13 +1,14 @@
 import React from 'react';
-import BookList from './BooksList'
+import BookList from './BooksList';
+import '../utilities/styleH2.css';
 
-const Main = ({books, onDeleteBook, onEditBook, setFavorite}) => {
+const Main = ({books, onDeleteBook, onEditBook, setFavorite, setCart, cart }) => {
     return (
         <div className="container">
             <div className="section">
-                <h2 style={{ color: "#2196F3", margin: "50px" }}>Reading Time</h2>
+                <h2>Reading Time</h2>
                 <div className="row">
-                    <BookList  books={books} onDeleteBook={onDeleteBook} onEditBook={onEditBook} setFavorite={setFavorite}/>
+                    <BookList  books={books} onDeleteBook={onDeleteBook} onEditBook={onEditBook} setFavorite={setFavorite} setCart={setCart} cart={cart}/>
                 </div>
             </div>
         </div >
