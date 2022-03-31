@@ -8,6 +8,10 @@
 }
 
 button{
+    color: white;
+    border-radius: 5px;
     background-color: #2196F3;
     text-align: center;
+    padding: 5px;
+    
 }
