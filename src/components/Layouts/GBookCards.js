@@ -1,8 +1,10 @@
 
 import { useNavigate } from 'react-router-dom';
+import { useUser } from '../../hooks/useUser';
 import './GBookCards.css';
 
 const GBookCards = ({ book, setBookToSell }) => {
+    const {user} = useUser();
     const navigate = useNavigate();
 
     const theBook = {
@@ -23,7 +25,7 @@ const GBookCards = ({ book, setBookToSell }) => {
     }
 
     return (
-        <div className="card col s12 m4" style={{ height: "500px", width: "370px", margin: "10px"}}>
+        <div className="card col s12 m4" style={{ height: "540px", width: "370px", margin: "10px"}}>
             <div className="card-image waves-effect waves-block waves-light">
                 <img id="gbook" className="GBook-image activator responsive-img" src={book.volumeInfo.imageLinks.thumbnail} alt="Book Picture" />
             </div>
@@ -39,7 +41,7 @@ const GBookCards = ({ book, setBookToSell }) => {
                 </div>
             </div>
             <div>
-                <button className='navButon' onClick={sellThisBook}>Sell This Book</button>
+                {user.role==='Seller' && <button className='navButon' onClick={sellThisBook}>Sell This Book</button>}
                 {/* {user && <button className='navButon' onClick={() => onAddingFavorite(recipe)}>Favorite</button>}
         {(userId === recipe.authorId || user?.role === "Admin") && <div>
             <button className='navButon' onClick={() => deleteRecipe(recipe.id)}>Delete</button>

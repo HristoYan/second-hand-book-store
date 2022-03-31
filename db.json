@@ -60,6 +60,19 @@
       "lastModification": "2022-3-29/11:52:29",
       "favorite": [],
       "id": 20
+    },
+    {
+      "name": "moncho",
+      "username": "monchoto",
+      "password": "passWor+123",
+      "gender": "Male",
+      "role": "Reader",
+      "imgUrl": "https://imgs.search.brave.com/8t7Necg_vFkAPxxrefkFdScUx1EFsLmveuqGqpJKYPo/rs:fit:493:225:1/g:ce/aHR0cHM6Ly90c2Ux/LmV4cGxpY2l0LmJp/bmcubmV0L3RoP2lk/PU9JUC4ta0F6dUFK/OHZENE44TC1TQ0xf/TDNBSGFISCZwaWQ9/QXBp",
+      "short_description": "nothing special",
+      "status": "Active",
+      "date": "2022-4-1/0:40:7",
+      "lastModification": "2022-4-1/0:40:7",
+      "id": 21
     }
   ],
   "books": [

@@ -138,7 +138,7 @@ function App() {
           <Route path='/my-books' element={<MyBooks books={books} onDeleteBook={deleteBook} onEditBook={editBook}/>} />
           <Route path='/sell-gbook' element={<GBookToSellForm book={bookToSell} onBookSubmit={handleSubmitBook("add")} />} />
           <Route path='/favorites' element={<Favorites users={users } books={books} favorite={favorite} setCart={setCart}/>} />
-          <Route path='/cart' element={<Cart cart={cart} />} />
+          <Route path='/cart' element={<Cart cart={cart} setCart={setCart}/>} />
 
 
         </Routes>

@@ -3,18 +3,19 @@ import { useState } from "react";
 import CartCards from "./CartCard";
 import './CartList.css';
 
-const CartList = ({ cart }) => {
+const CartList = ({ cart, setCart }) => {
     const [totale, setTotale] = useState();
 
-    const handleClick= () => {
+    const handleClick = () => {
         alert(`You have successfully bouht books for: $${totale}`);
-        setTotale(0);
+        setCart([]);
+        setTotale();
     }
     return (
         <>
             <div className="BookList-items">
                 {
-                    cart?.map(car => (<CartCards car={car} key={car.id} setTotale={setTotale}/>))
+                    cart?.map(car => (<CartCards car={car} key={car.id} setTotale={setTotale} />))
                 }
             </div>
             <div id="price">

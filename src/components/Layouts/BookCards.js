@@ -33,7 +33,7 @@ const BookCards = ({ book, onDeleteBook, onEditBook, setFavorite, setCart, cart 
     //     navigate(`/recipes/${params.recipeId}`);
     // }
     return (
-        <div className="card col s12 m4" style={{ height: "500px", width: "370px", margin: "10px" }}>
+        <div className="card col s12 m4" style={{ height: "600px", width: "370px", margin: "10px" }}>
             <div className="card-image waves-effect waves-block waves-light">
                 <img id="book-card" className="Book-image activator responsive-img" src={book.imgUrl} alt="Book Picture" />
             </div>
