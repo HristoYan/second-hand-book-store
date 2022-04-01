@@ -3,6 +3,7 @@ import BookList from './BooksList';
 import '../utilities/styleH2.css';
 import { useUser } from '../../hooks/useUser';
 import UserApi from '../../services/user-api-client';
+import Loader from '../utilities/Loader';
 
 const Favorites = ({ users, books, favorite, onDeleteBook, setCart }) => {
     console.log(books);
@@ -17,33 +18,51 @@ const Favorites = ({ users, books, favorite, onDeleteBook, setCart }) => {
     console.log(booksId);
 
     useEffect(async () => {
-        let favArr = userInfo.favorite;
-        let filtered = favArr.filter(e => booksId.includes(e) )
-        if (!(filtered.includes(favorite))) {
-
-            favArr.push(favorite);
-
+        let filtered;
+        if (userInfo.favorite) {
+            filtered = (userInfo.favorite).filter(e => booksId.includes(e));
+            if (!(filtered.includes(favorite))) {
+                console.log(`book pushed in array!`);
+                filtered.push(favorite);
+            }
         } else {
-            return filtered;
+            console.log(`book created!`);
+
+            filtered.push(favorite);
         }
+
+        // if(!filtered) {
+        //     console.log(`book created!`);
+
+        //     filtered.push(favorite);
+        // } else {
+        //     console.log(`book already exist!`);
+        //     return filtered;
+        // }
+
         console.log(filtered);
         const userObj = {
             ...user,
             favorite: filtered
-        }
+        };
         const updatedUser = await UserApi.putUpdateUser(userObj);
         console.log(updatedUser.favorite);
         setFavBooksId(updatedUser.favorite);
     }, []);
 
-    console.log(favBooksId);
-    let resultedBooks = [];
-    if (Array.isArray(favBooksId)) {
-        for (const favId of favBooksId) {
-            const temp = books.filter(book => book.id === favId);
-            resultedBooks.push(temp)
-        }
+    if (!favBooksId) {
+        return <Loader />;
     }
+
+    console.log(favBooksId);
+
+    let resultedBooks = [];
+
+    for (const favId of favBooksId) {
+        const temp = books.filter(book => book.id === favId);
+        resultedBooks.push(temp)
+    }
+
     console.log(resultedBooks);
     let favBooks = [];
     for (let i = 0; i < resultedBooks.length; i++) {
@@ -55,11 +74,11 @@ const Favorites = ({ users, books, favorite, onDeleteBook, setCart }) => {
 
     return (
         <>
-           {!!(favBooks) ? <div className="container">
+            {!!(favBooks) ? <div className="container">
                 <div className="section">
-                    <h2>Reading Time</h2>
+                    <h2>Your Favorite Books</h2>
                     <div className="row">
-                        <BookList books={favBooks} onDeleteBook={onDeleteBook} setCart={setCart}/>
+                        <BookList books={favBooks} onDeleteBook={onDeleteBook} setCart={setCart} />
                     </div>
                 </div>
             </div > : <h2>No Favorites yet!</h2>}

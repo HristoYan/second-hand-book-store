@@ -49,30 +49,6 @@ class BooksApiClient {
         }));
     }
 
-    // async favoriteRecipes() {
-    //     return this.handleResponse(async () => fetch(`${BOOKS_API_BASE_URL}/favorite`));
-    // }
-
-    // async fetchFavoriteById(recipeId) {
-    //     return this.handleResponse(async () => fetch(`${BOOKS_API_BASE_URL}/favorite/${recipeId}`));
-    // }
-    
-    // async postFavoriteRecipe(recipe) {
-    //     return this.handleResponse(async () => fetch(`${BOOKS_API_BASE_URL}/favorite`, {
-    //         headers: {
-    //             'Content-Type': 'application/json'
-    //         },
-    //         method: 'POST',
-    //         body: JSON.stringify(recipe)
-    //     }));
-    // }
-
-    // async deleteFavorite(recipeId) {
-    //     return this.handleResponse(async () => fetch(`${BOOKS_API_BASE_URL}/favorite/${recipeId}`, {
-    //         method: 'DELETE',
-    //     }));
-    // }
-
     async handleResponse(asyncRequestFunc) {
         try {
             const resp = await asyncRequestFunc();

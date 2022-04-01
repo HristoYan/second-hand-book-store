@@ -20,6 +20,7 @@ import Favorites from './components/Layouts/Favorites';
 import {useUser} from './hooks/useUser';
 import userApiClient from './services/user-api-client';
 import Cart from './components/Layouts/Cart';
+import { SingleBookView } from './components/Layouts/SingleBookView';
 
 function App() {
   const [tags, setTags] = useState();
@@ -30,6 +31,7 @@ function App() {
   const [users, setUsers] = useState([]);
   const [favorite, setFavorite] = useState();
   const [cart, setCart] = useState([]);
+  const [bookSelect, setBookSelect] = useState();
   const [bookToEdit, setBookToEdit] = useState();
   const [errors, setErrors] = useState();
   const [messages, setMessages] = useState();
@@ -117,7 +119,7 @@ function App() {
         })
     }
   }
-  console.log(cart);
+  console.log(bookSelect);
   
   return (
     <>
@@ -129,7 +131,7 @@ function App() {
           <Route path='/register' element={<RegisterForm />} />
           <Route path='/login' element={<LogInForm />} />
 
-          <Route path='/' element={<Main books={books} onDeleteBook={deleteBook} onEditBook={editBook} setFavorite={setFavorite} setCart={setCart} cart={cart}/>} />
+          <Route path='/' element={<Main books={books} onBookSelect={setBookSelect} onDeleteBook={deleteBook} onEditBook={editBook} setFavorite={setFavorite} setCart={setCart} cart={cart}/>} />
           <Route path='/explore' element={<GBooks books={gBooks} setBookToSell={setBookToSell}/>} />
           <Route path='/users' element={<Users users={users} setUsers={setUsers} onEditUser={editUser} onDeleteUser={deleteUser} />} />
           <Route path='/edit-user' element={<EditUser user={userToEdit} />} />
@@ -139,6 +141,7 @@ function App() {
           <Route path='/sell-gbook' element={<GBookToSellForm book={bookToSell} onBookSubmit={handleSubmitBook("add")} />} />
           <Route path='/favorites' element={<Favorites users={users } books={books} favorite={favorite} setCart={setCart}/>} />
           <Route path='/cart' element={<Cart cart={cart} setCart={setCart}/>} />
+          <Route path='/book' element={<SingleBookView bookId={bookSelect}/>} />
 
 
         </Routes>

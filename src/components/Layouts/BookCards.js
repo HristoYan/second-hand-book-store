@@ -3,12 +3,13 @@ import './BookCards.css';
 import { useUser } from '../../hooks/useUser';
 import { useNavigate, useParams } from 'react-router-dom';
 
-const BookCards = ({ book, onDeleteBook, onEditBook, setFavorite, setCart, cart }) => {
+const BookCards = ({ book, onDeleteBook, onEditBook, setFavorite, setCart, cart, onBookSelect }) => {
     const { user } = useUser();
     const userId = user?.id;
     const navigate = useNavigate();
-    // const params = useParams();
+    const params = useParams();
     console.log(cart);
+    
     function onAddingFavorite() {
 
         console.log(`Book Favorite: ${book.id}`);
@@ -28,10 +29,10 @@ const BookCards = ({ book, onDeleteBook, onEditBook, setFavorite, setCart, cart 
 
     }
 
-    // const onCookClick = () => {
-    //     onRecipeSelect();
-    //     navigate(`/recipes/${params.recipeId}`);
-    // }
+    const onBookClick = () => {
+        onBookSelect(book.id);
+        navigate(`/book`);
+    }
     return (
         <div className="card col s12 m4" style={{ height: "600px", width: "370px", margin: "10px" }}>
             <div className="card-image waves-effect waves-block waves-light">
@@ -51,7 +52,7 @@ const BookCards = ({ book, onDeleteBook, onEditBook, setFavorite, setCart, cart 
                 </div>
             </div>
             <div>
-                {/* <button className='navButon' onClick={onCookClick}>See More</button> */}
+                {user && <button className='navButon' onClick={onBookClick}>See More</button>}
                 {(user && userId !== book.sellerId) && <button className='navButon' onClick={() => onAddingCart(book)}>Add to Cart</button>}
                 {(user && userId !== book.sellerId) && <button className='navButon' onClick={onAddingFavorite}>Add to Favorite</button>}
                 {(userId === book.sellerId || user?.role === "Admin") && <div>

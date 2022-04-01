@@ -2,13 +2,13 @@ import React from 'react';
 import BookList from './BooksList';
 import '../utilities/styleH2.css';
 
-const Main = ({books, onDeleteBook, onEditBook, setFavorite, setCart, cart }) => {
+const Main = ({books, onDeleteBook, onEditBook, setFavorite, setCart, cart, onBookSelect }) => {
     return (
         <div className="container">
             <div className="section">
                 <h2>Reading Time</h2>
                 <div className="row">
-                    <BookList  books={books} onDeleteBook={onDeleteBook} onEditBook={onEditBook} setFavorite={setFavorite} setCart={setCart} cart={cart}/>
+                    <BookList  books={books} onBookSelect={onBookSelect} onDeleteBook={onDeleteBook} onEditBook={onEditBook} setFavorite={setFavorite} setCart={setCart} cart={cart}/>
                 </div>
             </div>
         </div >

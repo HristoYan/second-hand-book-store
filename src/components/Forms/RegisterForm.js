@@ -25,6 +25,7 @@ export const RegisterForm = () => {
             imgUrl: '',
             short_description: '',
             status: 'Active',
+            favorites: [],
             date: dateTime,
             lastModification: dateTime
         },
