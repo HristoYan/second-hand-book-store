@@ -2,3 +2,9 @@
 #book-card{
     height: 300px;
 }
+
+.buttons-div{
+    display:inline-block;
+    text-align: center;
+    margin-bottom: 10px;
+}

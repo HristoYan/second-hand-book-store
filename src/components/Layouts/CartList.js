@@ -7,9 +7,9 @@ const CartList = ({ cart, setCart }) => {
     const [totale, setTotale] = useState();
 
     const handleClick = () => {
-        alert(`You have successfully bouht books for: $${totale}`);
         setCart([]);
         setTotale();
+        alert(`You have successfully bouht books for: $${totale}`);
     }
     return (
         <>

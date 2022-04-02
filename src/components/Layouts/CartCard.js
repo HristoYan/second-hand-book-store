@@ -36,7 +36,7 @@ const CartCards = ({ car, setTotale }) => {
                                 <p>
                                     <label>
                                         <input type="checkbox" className="filled-in" name={car.title} value={car.price} checked={checked} onChange={handleChange}/>
-                                        <span>Filled in</span>
+                                        <span>Check out</span>
                                     </label>
                                 </p>
                             </span>

@@ -35,6 +35,7 @@ function App() {
   const [cart, setCart] = useState([]);
   const [bookSelect, setBookSelect] = useState();
   const [title, setTitle] = useState();
+  const [search, setSearch] = useState('');
   const [bookToEdit, setBookToEdit] = useState();
   const [errors, setErrors] = useState();
   const [messages, setMessages] = useState();
@@ -129,7 +130,7 @@ function App() {
   return (
     <>
       <div className="App">
-        <Navigation setUserToEdit={setUserToEdit} />
+        <Navigation setUserToEdit={setUserToEdit} search={search} setSearch={setSearch} books={books} setTitle={setTitle}/>
         <Header setTags={setTags} />
 
         <Routes>

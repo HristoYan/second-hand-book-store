@@ -3,7 +3,7 @@ import { useUser } from '../../hooks/useUser';
 import './Navigation.css';
 import { NavLink, useNavigate } from "react-router-dom";
 
-const Nav = ({setUserToEdit}) => {
+const Navigation = ({ setUserToEdit, search, setSearch, books, setTitle }) => {
   const { user, logOut } = useUser();
 
   const isAdmin = user?.role === "Admin";
@@ -18,6 +18,22 @@ const Nav = ({setUserToEdit}) => {
   function setUser() {
     setUserToEdit(user);
     navigate('/edit-user');
+  }
+
+  function searchTitle() {
+    console.log(`Search: ${search}`);
+    books.forEach(e => {
+      console.log(e.title);
+    });
+    const booksTitle = books.map(b => (b.title).toLowerCase());
+    if(!(booksTitle.includes(search.toLowerCase()))) {
+      return <h3>Sorry We Don't Have The Book You Are Looking For!</h3>;
+    }
+    const index = booksTitle.indexOf(search.toLowerCase());
+    console.log(`searched Book: ${JSON.stringify(books[index])}`);
+    setTitle([books[index]]);
+    document.getElementById('search').value = '';
+    navigate("/title-check");
   }
 
   const activeClassName = "Nav-active";
@@ -53,9 +69,9 @@ const Nav = ({setUserToEdit}) => {
                   className={({ isActive }) =>
                     isActive ? activeClassName : undefined}>
                   My Books
-                </NavLink></li> 
-                
-            </>): undefined
+                </NavLink></li>
+
+            </>) : undefined
           }
           {user && (
             <>
@@ -106,6 +122,14 @@ const Nav = ({setUserToEdit}) => {
         </NavLink>) : undefined}
 
         <ul className="right hide-on-med-and-down">
+          <li><a href='#'>
+            {!!user && <> <input id='search' type="text" name="search" value={search} onChange={(e) => setSearch(e.target.value)} placeholder="Search title" />
+              <span id="logo-container" href="#" className="brand-logo">
+                <span className="large material-icons" onClick={searchTitle}>search</span>
+              </span>
+            </>}
+          </a></li>
+
           <li><a href='#' onClick={setUser}>{user?.username ?? "PLEASE REGISTER"}</a></li>
           {!!user && <li><a onClick={onLogOut} href="#">Log out</a></li>}
         </ul>
@@ -119,4 +143,4 @@ const Nav = ({setUserToEdit}) => {
   )
 }
 
-export default Nav
+export default Navigation

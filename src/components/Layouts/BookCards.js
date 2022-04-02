@@ -52,7 +52,7 @@ const BookCards = ({ book, onDeleteBook, onEditBook, setFavorite, setCart, cart,
                     {book.description}
                 </div>
             </div>
-            <div>
+            <div className="buttons-div">
                 {user && <button className='navButon' onClick={onBookClick}>See More</button>}
                 {(user && userId !== book.sellerId) && <button className='navButon' onClick={() => onAddingCart(book)}>Add to Cart</button>}
                 {(user && userId !== book.sellerId) && <button className='navButon' onClick={onAddingFavorite}>Add to Favorite</button>}
