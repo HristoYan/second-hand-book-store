@@ -1,10 +1,10 @@
 import GBookCards from "./GBookCards";
 
-const GBookList = ({ books, setBookToSell }) => {
+const GBookList = ({ books, setBookToSell, setTitle, setMessage }) => {
     return (
         <div className="BookList-items">
             {
-                books.map(book => (<GBookCards  book={book} key={book.id} setBookToSell={setBookToSell}/>))
+                books.map(book => (<GBookCards  book={book} key={book.id} setBookToSell={setBookToSell} setTitle={setTitle} setMessage={setMessage}/>))
             }
         </div>
     );

@@ -1,9 +1,10 @@
 
 import { useNavigate } from 'react-router-dom';
 import { useUser } from '../../hooks/useUser';
+import BookApi from '../../services/books-api-client';
 import './GBookCards.css';
 
-const GBookCards = ({ book, setBookToSell }) => {
+const GBookCards = ({ book, setBookToSell, setTitle, setMessage }) => {
     const {user} = useUser();
     const navigate = useNavigate();
 
@@ -24,6 +25,15 @@ const GBookCards = ({ book, setBookToSell }) => {
         navigate('/sell-gbook');
     }
 
+    async function checkThisBook() {
+        const bookTitle = await BookApi.fetchBookByTitle(book.volumeInfo.title);
+        if(!(!!bookTitle)) {
+            setMessage("We are sorry but the book is not available!");
+        }
+        setTitle(bookTitle);
+        navigate('/title-check');
+    }
+
     return (
         <div className="card col s12 m4" style={{ height: "540px", width: "370px", margin: "10px"}}>
             <div className="card-image waves-effect waves-block waves-light">
@@ -42,6 +52,7 @@ const GBookCards = ({ book, setBookToSell }) => {
             </div>
             <div>
                 {user.role==='Seller' && <button className='navButon' onClick={sellThisBook}>Sell This Book</button>}
+                {user && <button className='navButon' onClick={checkThisBook}>Check if Available</button>}
                 {/* {user && <button className='navButon' onClick={() => onAddingFavorite(recipe)}>Favorite</button>}
         {(userId === recipe.authorId || user?.role === "Admin") && <div>
             <button className='navButon' onClick={() => deleteRecipe(recipe.id)}>Delete</button>

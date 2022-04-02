@@ -13,14 +13,16 @@ import { LogInForm } from './components/Forms/LogInForm';
 import { Users } from './components/Users/Users';
 import { EditUser } from './components/Users/EditUser';
 import { AddBookForm } from './components/Forms/AddBookForm';
-import {EditBookForm} from './components/Forms/EditBookForm';
+import { EditBookForm } from './components/Forms/EditBookForm';
 import MyBooks from './components/Layouts/MyBooks';
 import { GBookToSellForm } from './components/Forms/GBookToSellForm';
 import Favorites from './components/Layouts/Favorites';
-import {useUser} from './hooks/useUser';
+import { useUser } from './hooks/useUser';
 import userApiClient from './services/user-api-client';
-import Cart from './components/Layouts/Cart';
+// import Cart from './components/Layouts/Cart';
 import { SingleBookView } from './components/Layouts/SingleBookView';
+import Titled from './components/Layouts/Titled';
+import Loader from './components/utilities/Loader';
 
 function App() {
   const [tags, setTags] = useState();
@@ -32,16 +34,19 @@ function App() {
   const [favorite, setFavorite] = useState();
   const [cart, setCart] = useState([]);
   const [bookSelect, setBookSelect] = useState();
+  const [title, setTitle] = useState();
   const [bookToEdit, setBookToEdit] = useState();
   const [errors, setErrors] = useState();
   const [messages, setMessages] = useState();
-  const {user} = useUser();
+  const { user } = useUser();
+
+  const Cart = React.lazy(() => import("./components/Layouts/Cart"));
 
   useEffect(async () => {
-      const userList = await userApiClient.fetchUsers();
-      console.log(userList);
-      setUsers(userList);
-  }, []);
+    const userList = await userApiClient.fetchUsers();
+    console.log(userList);
+    setUsers(userList);
+  }, [favorite]);
 
   const navigate = useNavigate();
 
@@ -50,7 +55,7 @@ function App() {
     setMessages(undefined);
   }
   console.log(favorite);
-  
+
   useEffect(() => {
     BookApi.fetchBooksForSell()
       .then(results => {
@@ -119,29 +124,39 @@ function App() {
         })
     }
   }
-  console.log(bookSelect);
-  
+  console.log(`Titelet App: ${JSON.stringify(title)}`);
+
   return (
     <>
       <div className="App">
-        <Navigation setUserToEdit={setUserToEdit}/>
+        <Navigation setUserToEdit={setUserToEdit} />
         <Header setTags={setTags} />
 
         <Routes>
           <Route path='/register' element={<RegisterForm />} />
           <Route path='/login' element={<LogInForm />} />
 
-          <Route path='/' element={<Main books={books} onBookSelect={setBookSelect} onDeleteBook={deleteBook} onEditBook={editBook} setFavorite={setFavorite} setCart={setCart} cart={cart}/>} />
-          <Route path='/explore' element={<GBooks books={gBooks} setBookToSell={setBookToSell}/>} />
+          <Route path='/' element={<Main books={books} onBookSelect={setBookSelect} onDeleteBook={deleteBook} onEditBook={editBook} setFavorite={setFavorite} setCart={setCart} cart={cart} />} />
+          <Route path='/explore' element={<GBooks books={gBooks} setBookToSell={setBookToSell} setTitle={setTitle} setMessage={setMessages} />} />
           <Route path='/users' element={<Users users={users} setUsers={setUsers} onEditUser={editUser} onDeleteUser={deleteUser} />} />
           <Route path='/edit-user' element={<EditUser user={userToEdit} />} />
           <Route path='/add-book' element={<AddBookForm onBookSubmit={handleSubmitBook("add")} />} />
           <Route path='/edit-book' element={<EditBookForm onBookSubmit={handleSubmitBook("edit")} />} />
-          <Route path='/my-books' element={<MyBooks books={books} onDeleteBook={deleteBook} onEditBook={editBook}/>} />
+          <Route path='/my-books' element={<MyBooks books={books} onDeleteBook={deleteBook} onEditBook={editBook} />} />
           <Route path='/sell-gbook' element={<GBookToSellForm book={bookToSell} onBookSubmit={handleSubmitBook("add")} />} />
-          <Route path='/favorites' element={<Favorites users={users } books={books} favorite={favorite} setCart={setCart}/>} />
-          <Route path='/cart' element={<Cart cart={cart} setCart={setCart}/>} />
-          <Route path='/book' element={<SingleBookView bookId={bookSelect}/>} />
+          <Route path='/favorites' element={<Favorites users={users} books={books} favorite={favorite} setCart={setCart} />} />
+
+          <Route
+            path='/cart'
+            element={
+              <React.Suspense fallback={<Loader />}>
+                <Cart cart={cart} setCart={setCart} />
+              </React.Suspense>
+            }
+          />
+          <Route path='/book' element={<SingleBookView bookId={bookSelect} />} />
+          <Route path='/title-check' element={<Titled title={title} onBookSelect={setBookSelect} setFavorite={setFavorite} setCart={setCart} cart={cart} />} />
+          <Route path='/*' element={<h2>You Probably Lost Yourself</h2>} />
 
 
         </Routes>

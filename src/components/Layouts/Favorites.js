@@ -8,19 +8,30 @@ import Loader from '../utilities/Loader';
 const Favorites = ({ users, books, favorite, onDeleteBook, setCart }) => {
     console.log(books);
     const { user } = useUser();
-    let [favBooksId, setFavBooksId] = useState();
+    const [favBooksId, setFavBooksId] = useState();
+    const [oldUser, setOldUser] = useState([]);
+
+    // useEffect(async() => {
+    //     const userInfo = await UserApi.fetchUserById(user.id);
+    //     console.log(userInfo.favorite);
+    //     setOldUser(userInfo.favorite);
+    
+    // }, [favorite])
+    
 
     const oldUserInfo = users.filter(u => u.id === user.id);
-    console.log(oldUserInfo[0]);
-    const userInfo = oldUserInfo[0];
+    console.log(`OldUser:${oldUserInfo[0]}`);
+    setOldUser(oldUserInfo[0].favorite);
+    console.log(`OldUserfav:${oldUserInfo[0].favorite}`);
 
     let booksId = books.map(el => el.id);
     console.log(booksId);
+    console.log(favorite);
 
     useEffect(async () => {
         let filtered;
-        if (userInfo.favorite) {
-            filtered = (userInfo.favorite).filter(e => booksId.includes(e));
+        if (oldUser) {
+            filtered = (oldUser).filter(e => booksId.includes(e));
             if (!(filtered.includes(favorite))) {
                 console.log(`book pushed in array!`);
                 filtered.push(favorite);
@@ -48,13 +59,13 @@ const Favorites = ({ users, books, favorite, onDeleteBook, setCart }) => {
         const updatedUser = await UserApi.putUpdateUser(userObj);
         console.log(updatedUser.favorite);
         setFavBooksId(updatedUser.favorite);
-    }, []);
+    }, [favorite]);
 
     if (!favBooksId) {
         return <Loader />;
     }
 
-    console.log(favBooksId);
+    console.log(`fvaBooksId${favBooksId}`);
 
     let resultedBooks = [];
 
@@ -81,7 +92,7 @@ const Favorites = ({ users, books, favorite, onDeleteBook, setCart }) => {
                         <BookList books={favBooks} onDeleteBook={onDeleteBook} setCart={setCart} />
                     </div>
                 </div>
-            </div > : <h2>No Favorites yet!</h2>}
+            </div > : <h2>Nothing in  Favorites yet!</h2>}
         </>
     )
 }

@@ -29,12 +29,12 @@ export const SingleBookView = ({ bookId }) => {
             <h2>Book Detailes</h2>
             <div className='detailes-info'>
                 <h3>{book.title}</h3>
-                <p>Author(s): {book.authors}</p>
+                <p className="card-title grey-text text-darken-4">Author(s): {book.authors}</p>
 
                 <img src={book.imgUrl} width='500px' height={300} />
-                <p>Price: {book.price}</p>
-                <p>Condition: {book.condition}</p>
-                <p >Description:
+                <p>Price: ${book.price}</p>
+                <p className="card-title grey-text text-darken-4">Condition: {book.condition} out of 5</p>
+                <p className="card-title grey-text text-darken-4">Description:
                         {book.description}
                 </p>
             </div>

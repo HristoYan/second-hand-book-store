@@ -9,7 +9,7 @@ const BookCards = ({ book, onDeleteBook, onEditBook, setFavorite, setCart, cart,
     const navigate = useNavigate();
     const params = useParams();
     console.log(cart);
-    
+
     function onAddingFavorite() {
 
         console.log(`Book Favorite: ${book.id}`);
@@ -40,14 +40,15 @@ const BookCards = ({ book, onDeleteBook, onEditBook, setFavorite, setCart, cart,
             </div>
             <div className="card-content">
                 <span className="card-title activator grey-text text-darken-4">{book.title}<i className="material-icons right">more_vert</i></span>
-                <p>Authors: {book.authors.join(', ')}</p>
+                <p className="card-title grey-text text-darken-4">Authors: {book.authors.join(', ')}</p>
             </div>
             <div className="card-reveal">
                 <span className="card-title grey-text text-darken-4">{book.title}<i className="material-icons right">close</i></span>
                 <p>Price: ${book.price}</p>
-                <p>Condition: {book.condition} out of 5</p>
+                <p className="card-title grey-text text-darken-4">Condition: {book.condition} out of 5</p>
+                <p className="card-title grey-text text-darken-4">Seller: {book.seller}</p>
                 <div>
-                    <p>Description:</p>
+                    <p className="card-title grey-text text-darken-4">Description:</p>
                     {book.description}
                 </div>
             </div>
