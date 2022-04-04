@@ -37,6 +37,7 @@ function App() {
   const [title, setTitle] = useState();
   const [search, setSearch] = useState('');
   const [bookToEdit, setBookToEdit] = useState();
+  const [comment, setComment] = useState({});
   const [errors, setErrors] = useState();
   const [messages, setMessages] = useState();
   const { user } = useUser();
@@ -66,7 +67,7 @@ function App() {
       .catch(err => {
         setErrors(err);
       });
-  }, []);
+  }, [comment]);
 
   useEffect(() => {
     console.log(tags);
@@ -130,7 +131,7 @@ function App() {
   return (
     <>
       <div className="App">
-        <Navigation setUserToEdit={setUserToEdit} search={search} setSearch={setSearch} books={books} setTitle={setTitle}/>
+        <Navigation setUserToEdit={setUserToEdit} search={search} setSearch={setSearch} books={books} setTitle={setTitle} />
         <Header setTags={setTags} />
 
         <Routes>
@@ -142,10 +143,10 @@ function App() {
           <Route path='/users' element={<Users users={users} setUsers={setUsers} onEditUser={editUser} onDeleteUser={deleteUser} />} />
           <Route path='/edit-user' element={<EditUser user={userToEdit} />} />
           <Route path='/add-book' element={<AddBookForm onBookSubmit={handleSubmitBook("add")} />} />
-          <Route path='/edit-book' element={<EditBookForm onBookSubmit={handleSubmitBook("edit")} initialValue={bookToEdit}/>} />
+          <Route path='/edit-book' element={<EditBookForm onBookSubmit={handleSubmitBook("edit")} initialValue={bookToEdit} />} />
           <Route path='/my-books' element={<MyBooks books={books} onDeleteBook={deleteBook} onEditBook={editBook} />} />
           <Route path='/sell-gbook' element={<GBookToSellForm book={bookToSell} onBookSubmit={handleSubmitBook("add")} />} />
-          <Route path='/favorites' element={<Favorites users={users} books={books} favorite={favorite} setCart={setCart} />} />
+          <Route path='/favorites' element={<Favorites users={users} books={books} favorite={favorite} setCart={setCart} onBookSelect={setBookSelect} />} />
 
           <Route
             path='/cart'
@@ -155,7 +156,7 @@ function App() {
               </React.Suspense>
             }
           />
-          <Route path='/book' element={<SingleBookView bookId={bookSelect} />} />
+          <Route path='/book' element={<SingleBookView bookId={bookSelect} comment={comment} setComment={setComment}/>} />
           <Route path='/title-check' element={<Titled title={title} onBookSelect={setBookSelect} setFavorite={setFavorite} setCart={setCart} cart={cart} />} />
           <Route path='/*' element={<h2>You Probably Lost Yourself</h2>} />
 

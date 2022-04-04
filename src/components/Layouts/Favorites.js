@@ -4,11 +4,13 @@ import '../utilities/styleH2.css';
 import { useUser } from '../../hooks/useUser';
 import UserApi from '../../services/user-api-client';
 import Loader from '../utilities/Loader';
+import FavoriteList from './FavoriteList';
 
-const Favorites = ({ users, books, favorite, onDeleteBook, setCart }) => {
+const Favorites = ({ users, books, favorite, onDeleteBook, setCart, onBookSelect }) => {
     console.log(books);
     const { user } = useUser();
     const [favBooks, setFavBooks] = useState([]);
+    const [userInfo, setUserInfo] = useState();
 
     let booksId = books.map(el => el.id);
     const oldUserInfo = users.filter(u => u.id === user.id);
@@ -42,6 +44,7 @@ const Favorites = ({ users, books, favorite, onDeleteBook, setCart }) => {
         }
         if (resultedBooks) {
             setFavBooks(resultedBooks);
+            setUserInfo(newUser);
         }
     }, [favorite]);
 
@@ -52,7 +55,7 @@ const Favorites = ({ users, books, favorite, onDeleteBook, setCart }) => {
                 <div className="section">
                     <h2>Your Favorite Books</h2>
                     <div className="row">
-                        <BookList books={favBooks} onDeleteBook={onDeleteBook} setCart={setCart} />
+                        <FavoriteList books={favBooks} userInfo={userInfo} onDeleteBook={onDeleteBook} setCart={setCart} onBookSelect={onBookSelect}/>
                     </div>
                 </div>
             </div > : <h2>Nothing in  Favorites yet!</h2>}
