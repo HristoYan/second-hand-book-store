@@ -1,15 +1,18 @@
 
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import CartCards from "./CartCard";
 import './CartList.css';
 
 const CartList = ({ cart, setCart }) => {
-    const [totale, setTotale] = useState();
+    const [totale, setTotale] = useState(0);
+    const navigate = useNavigate();
 
     const handleClick = () => {
         setCart([]);
-        setTotale();
+        setTotale(0);
         alert(`You have successfully bouht books for: $${totale}`);
+        navigate('/');  
     }
     return (
         <>

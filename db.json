@@ -78,6 +78,20 @@
         7,
         4
       ]
+    },
+    {
+      "name": "Dimitar",
+      "username": "Mitko1",
+      "password": "password123_?",
+      "gender": "Male",
+      "role": "Seller",
+      "imgUrl": "https://imgs.search.brave.com/d0IIb0RSYo0SCzA8yldT5UCB9IByR7XvhKjLrb6F-Zc/rs:fit:474:225:1/g:ce/aHR0cHM6Ly90c2U0/Lm1tLmJpbmcubmV0/L3RoP2lkPU9JUC53/UnR2T05fOEpLUlFn/aGRST3c1UXZRSGFI/YSZwaWQ9QXBp",
+      "short_description": "handsome",
+      "status": "Active",
+      "favorites": [],
+      "date": "2022-4-4/14:4:5",
+      "lastModification": "2022-4-4/14:4:5",
+      "id": 22
     }
   ],
   "books": [
@@ -85,7 +99,7 @@
       "seller": "emoto",
       "sellerId": 8,
       "condition": 5,
-      "price": 20,
+      "price": 15,
       "imgUrl": "http://books.google.com/books/content?id=274fCwAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
       "title": "Learning React Native",
       "authors": [

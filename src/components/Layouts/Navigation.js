@@ -134,10 +134,6 @@ const Navigation = ({ setUserToEdit, search, setSearch, books, setTitle }) => {
           {!!user && <li><a onClick={onLogOut} href="#">Log out</a></li>}
         </ul>
 
-        <ul id="nav-mobile" className="sidenav">
-          <li><a href="#">Navbar Link</a></li>
-        </ul>
-        <a href="#" data-target="nav-mobile" className="sidenav-trigger"><i className="material-icons">menu</i></a>
       </div>
     </nav>
   )

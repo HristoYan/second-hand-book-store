@@ -142,7 +142,7 @@ function App() {
           <Route path='/users' element={<Users users={users} setUsers={setUsers} onEditUser={editUser} onDeleteUser={deleteUser} />} />
           <Route path='/edit-user' element={<EditUser user={userToEdit} />} />
           <Route path='/add-book' element={<AddBookForm onBookSubmit={handleSubmitBook("add")} />} />
-          <Route path='/edit-book' element={<EditBookForm onBookSubmit={handleSubmitBook("edit")} />} />
+          <Route path='/edit-book' element={<EditBookForm onBookSubmit={handleSubmitBook("edit")} initialValue={bookToEdit}/>} />
           <Route path='/my-books' element={<MyBooks books={books} onDeleteBook={deleteBook} onEditBook={editBook} />} />
           <Route path='/sell-gbook' element={<GBookToSellForm book={bookToSell} onBookSubmit={handleSubmitBook("add")} />} />
           <Route path='/favorites' element={<Favorites users={users} books={books} favorite={favorite} setCart={setCart} />} />
@@ -158,7 +158,6 @@ function App() {
           <Route path='/book' element={<SingleBookView bookId={bookSelect} />} />
           <Route path='/title-check' element={<Titled title={title} onBookSelect={setBookSelect} setFavorite={setFavorite} setCart={setCart} cart={cart} />} />
           <Route path='/*' element={<h2>You Probably Lost Yourself</h2>} />
-
 
         </Routes>
         <Footer />

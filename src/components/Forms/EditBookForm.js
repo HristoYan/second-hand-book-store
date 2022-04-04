@@ -37,21 +37,30 @@ export const EditBookForm = ({ initialValue, ...props }) => {
         validationSchema: Yup.object().shape({
             condition: Yup.number()
                 .min(1, 'You must choose a number between 1 and 5!')
-                .max(5, 'You must choose a number between 1 and 5!'),
-            price: Yup.number(),
+                .max(5, 'You must choose a number between 1 and 5!')
+                .required('Required'),
+            price: Yup.number()
+                .required('Required'),
             imgUrl: Yup.string()
-                .url('Invalid URL'),
+                .url('Invalid URL')
+                .required('Required'),
             title: Yup.string()
-                .max(80, 'Too Long!'),
+                .max(80, 'Too Long!')
+                .required('Required'),
             authors: Yup.string()
-                .max(80, 'Too Long!'),
+                .max(80, 'Too Long!')
+                .required('Required'),
             publisher: Yup.string()
-                .max(80, 'Too Long!'),
+                .max(80, 'Too Long!')
+                .required('Required'),
             year: Yup.string()
-                .max(30, 'Too Long!'),
-            categories: Yup.string(),
+                .max(30, 'Too Long!')
+                .required('Required'),
+            categories: Yup.string()
+                .required('Required'),
             description: Yup.string()
-                .max(2048, 'Too Long!')
+                .max(4000, 'Too Long!')
+                .required('Required')
         }),
 
         onSubmit: async (values) => {
