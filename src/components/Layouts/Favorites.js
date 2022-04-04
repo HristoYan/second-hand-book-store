@@ -29,13 +29,16 @@ const Favorites = ({ users, books, favorite, onDeleteBook, setCart }) => {
         resultedBooks.push(temp[0]);
     }
 
+    console.log(`favorite books Ids: ${filteredFav}`);
+
     useEffect(async () => {
         const newUser = {
-            ...oldUserInfo,
-            favorite: resultedBooks
+            ...oldUserInfo[0],
+            favorite: filteredFav
         }
+        console.log(`NewUser: >>>${JSON.stringify(newUser)}`);
         if (!!newUser) {
-            UserApi.putUpdateUser(newUser);
+            await UserApi.putUpdateUser(newUser);
         }
         if (resultedBooks) {
             setFavBooks(resultedBooks);
@@ -43,7 +46,7 @@ const Favorites = ({ users, books, favorite, onDeleteBook, setCart }) => {
     }, [favorite]);
 
 
-    console.log(`FavBooks: ${JSON.stringify(resultedBooks)}`);
+    // console.log(`FavBooks: ${JSON.stringify(resultedBooks)}`);
 
     return (
         <>
