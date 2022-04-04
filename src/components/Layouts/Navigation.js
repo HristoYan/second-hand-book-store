@@ -26,7 +26,7 @@ const Navigation = ({ setUserToEdit, search, setSearch, books, setTitle }) => {
       console.log(e.title);
     });
     const booksTitle = books.map(b => (b.title).toLowerCase());
-    if(!(booksTitle.includes(search.toLowerCase()))) {
+    if (!(booksTitle.includes(search.toLowerCase()))) {
       return <h3>Sorry We Don't Have The Book You Are Looking For!</h3>;
     }
     const index = booksTitle.indexOf(search.toLowerCase());
@@ -79,7 +79,9 @@ const Navigation = ({ setUserToEdit, search, setSearch, books, setTitle }) => {
                 to="/favorites"
                 className={({ isActive }) =>
                   isActive ? activeClassName : undefined}>
-                Favorite
+                <span id="logo-container" href="#" className="brand-logo">
+                  <span className="large material-icons" >favorite</span>
+                </span>
               </NavLink></li>
             </>
           )}
@@ -89,7 +91,9 @@ const Navigation = ({ setUserToEdit, search, setSearch, books, setTitle }) => {
                 to="/users"
                 className={({ isActive }) =>
                   isActive ? activeClassName : undefined}>
-                Users
+                 <span id="logo-container" href="#" className="brand-logo">
+                  <span className="large material-icons" >face</span>
+                </span>
               </NavLink></li>
           }
           {

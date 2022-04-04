@@ -46,8 +46,6 @@ const Favorites = ({ users, books, favorite, onDeleteBook, setCart }) => {
     }, [favorite]);
 
 
-    // console.log(`FavBooks: ${JSON.stringify(resultedBooks)}`);
-
     return (
         <>
             {!!(favBooks) ? <div className="container">

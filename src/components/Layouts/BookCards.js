@@ -17,9 +17,9 @@ const BookCards = ({ book, onDeleteBook, onEditBook, setFavorite, setCart, cart,
         navigate("/favorites");
     }
 
-    function onAddingCart () {
+    function onAddingCart() {
         console.log(`Add to Cart: ${JSON.stringify(book)}`);
-        if(!!cart) {
+        if (!!cart) {
 
             setCart(cart => [...cart, book]);
         } else {
@@ -54,11 +54,27 @@ const BookCards = ({ book, onDeleteBook, onEditBook, setFavorite, setCart, cart,
             </div>
             <div className="buttons-div">
                 {user && <button className='navButon' onClick={onBookClick}>See More</button>}
-                {(user && userId !== book.sellerId) && <button className='navButon' onClick={() => onAddingCart(book)}>Add to Cart</button>}
-                {(user && userId !== book.sellerId) && <button className='navButon' onClick={onAddingFavorite}>Add to Favorite</button>}
+                {(user && userId !== book.sellerId) && <button className='navButon' onClick={() => onAddingCart(book)}>
+                    <span id="logo-container" href="#" className="brand-logo">
+                        <span className="large material-icons" >add_shopping_cart</span>
+                    </span>
+                </button>}
+                {(user && userId !== book.sellerId) && <button className='navButon' onClick={onAddingFavorite}>
+                    <span id="logo-container" href="#" className="brand-logo">
+                        <span className="large material-icons" >favorite</span>
+                    </span>
+                </button>}
                 {(userId === book.sellerId || user?.role === "Admin") && <div>
-                    <button className='navButon' onClick={() => onDeleteBook(book.id)}>Delete</button>
-                    <button className='navButon' onClick={() => onEditBook(book)}>Edit</button>
+                    <button className='navButon' onClick={() => onDeleteBook(book.id)}>
+                        <span id="logo-container" href="#" className="brand-logo">
+                            <span className="large material-icons" >delete_forever</span>
+                        </span>
+                    </button>
+                    <button className='navButon' onClick={() => onEditBook(book)}>
+                        <span id="logo-container" href="#" className="brand-logo">
+                            <span className="large material-icons" >edit</span>
+                        </span>
+                    </button>
                 </div>
                 }
             </div>

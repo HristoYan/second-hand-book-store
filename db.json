@@ -58,7 +58,11 @@
       "status": "Active",
       "date": "2022-3-29/11:52:29",
       "lastModification": "2022-3-29/11:52:29",
-      "favorite": [],
+      "favorite": [
+        9,
+        5,
+        7
+      ],
       "id": 20
     },
     {
@@ -215,6 +219,26 @@
       "date": "2022-3-31/19:36:56",
       "lastModification": "2022-3-31/19:36:56",
       "id": 9
+    },
+    {
+      "seller": "kiroto",
+      "sellerId": 20,
+      "condition": 4,
+      "price": 23,
+      "imgUrl": "http://books.google.com/books/content?id=4RChxt67lvwC&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
+      "title": "JavaScript",
+      "authors": [
+        "David Flanagan"
+      ],
+      "publisher": "\"O'Reilly Media, Inc.\"",
+      "year": "2011-04-25",
+      "categories": [
+        "Computers"
+      ],
+      "description": "A revised and updated edition offers comprehensive coverage of ECMAScript 5 (the new JavaScript language standard) and also the new APIs introduced in HTML5, with chapters on functions and classes completely rewritten and updated to match current best practices and a new chapter on language extensions and subsets. Original.",
+      "date": "2022-4-4/16:44:49",
+      "lastModification": "2022-4-4/16:44:49",
+      "id": 10
     }
   ]
 }
