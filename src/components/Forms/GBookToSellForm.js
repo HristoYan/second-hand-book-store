@@ -16,7 +16,7 @@ export const GBookToSellForm = ({ book, onBookSubmit }) => {
     const formik = useFormik({
         initialValues: {
             seller: user.username,
-            sellerId: JSON.parse(sessionStorage.getItem('user')).id,
+            sellerId: user.id,
             condition: Number,
             price: Number,
             imgUrl: book.imgUrl,
@@ -26,7 +26,7 @@ export const GBookToSellForm = ({ book, onBookSubmit }) => {
             year: book.year,
             categories: book.categories,
             description: book.description,
-            favorites: [],
+            comments: [],
             date: dateTime,
             lastModification: dateTime,
             authors: Array.isArray(book?.authors) ? book.authors.join(", ") : "",
