@@ -1,24 +1,18 @@
 import React, { useState } from 'react';
-// import './BookCards.css';
-// import { useUser } from '../../hooks/useUser';
-// import { useNavigate, useParams } from 'react-router-dom';
 
-let price = 0;
-const CartCards = ({ car, setTotale }) => {
+const CartCards = ({ car, changeTotale }) => {
 
     const [checked, setChecked] = useState(false);
 
     const handleChange = (event) => {
         setChecked(!checked);
-        if (!checked) {
-            console.log(event.target.value);
-            price += +event.target.value;
-            console.log(price);
-        } else if (checked) {
-            price -= +event.target.value;
-            console.log(price);
+        console.log(event.target.checked);
+        if(!checked) {
+
+            changeTotale(Number(event.target.value))
+        } else {
+            changeTotale(-Number(event.target.value))
         }
-        setTotale(price);
     };
     
     return (

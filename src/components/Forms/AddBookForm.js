@@ -28,6 +28,7 @@ export const AddBookForm = ({ onBookSubmit }) => {
             year: '',
             categories: '',
             description: '',
+            favorites: [],
             bookId: Number,
             date: dateTime,
             lastModification: dateTime,

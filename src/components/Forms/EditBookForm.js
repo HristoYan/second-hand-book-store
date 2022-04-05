@@ -26,6 +26,7 @@ export const EditBookForm = ({ initialValue, ...props }) => {
             year: '',
             categories: '',
             description: '',
+            favorites: [],
             bookId: Number,
             date: dateTime,
             lastModification: dateTime,

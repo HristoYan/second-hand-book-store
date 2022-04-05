@@ -8,6 +8,10 @@ const CartList = ({ cart, setCart }) => {
     const [totale, setTotale] = useState(0);
     const navigate = useNavigate();
 
+    function changeTotale(itemPrice) {
+        setTotale((prevTotal) => prevTotal+itemPrice);
+    }
+
     const handleClick = () => {
         setCart([]);
         setTotale(0);
@@ -18,7 +22,7 @@ const CartList = ({ cart, setCart }) => {
         <>
             <div className="BookList-items">
                 {
-                    cart?.map(car => (<CartCards car={car} key={car.id} setTotale={setTotale} />))
+                    cart?.map(car => (<CartCards car={car} key={car.id} changeTotale={changeTotale} />))
                 }
             </div>
             <div id="price">

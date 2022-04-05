@@ -26,6 +26,7 @@ export const GBookToSellForm = ({ book, onBookSubmit }) => {
             year: book.year,
             categories: book.categories,
             description: book.description,
+            favorites: [],
             date: dateTime,
             lastModification: dateTime,
             authors: Array.isArray(book?.authors) ? book.authors.join(", ") : "",

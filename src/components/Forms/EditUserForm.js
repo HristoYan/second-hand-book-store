@@ -12,13 +12,17 @@ export const EditUser = ({ user }) => {
 
     const navigate = useNavigate();
     const formik = useFormik({
-        initialValues: { ...user, lastModification: dateTime},
+        initialValues: { ...user, lastModification: dateTime },
 
         validationSchema: Yup.object().shape({
             name: Yup.string()
                 .max(15, "Too Long"),
             username: Yup.string()
                 .max(15, "Too Long"),
+            password: Yup.string()
+                .min(8, 'Too short')
+                .matches(/\W?\w+?\W+?\w*\W?/, 'Password must contains at least one digit and one non-word character')
+                .required('Required'),
             gender: Yup.string()
                 .oneOf(['Male', 'Female']),
             role: Yup.string()
@@ -39,7 +43,7 @@ export const EditUser = ({ user }) => {
 
     return (
         <form onSubmit={formik.handleSubmit} onReset={formik.handleReset}>
-            <h2 style={{color:"#2196F3", margin:"50px"}}>Edit</h2>
+            <h2 style={{ color: "#2196F3", margin: "50px" }}>Edit</h2>
             <div className="container">
                 <div className="row">
                     <div className="input-field col s12">
@@ -54,6 +58,13 @@ export const EditUser = ({ user }) => {
                     </div>
                 </div>
                 {formik.touched.username && formik.errors.username ? <p>{formik.errors.username}</p> : null}
+
+                <div className="row">
+                    <div className="input-field col s12">
+                        <input id="password" name='password' type="password" placeholder='Password' className="validate" value={formik.values.password} onChange={formik.handleChange} onBlur={formik.handleBlur} />
+                    </div>
+                </div>
+                {formik.touched.password && formik.errors.password ? <p>{formik.errors.password}</p> : null}
 
                 <div className="row">
                     <div className="input-field col s12">
