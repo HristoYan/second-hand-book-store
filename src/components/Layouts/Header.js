@@ -11,7 +11,6 @@ const Header = ({ setTags }) => {
         let tagsToString;
         if (tags.value) {
             tagsToString = tags.value.split(',').map(tag => tag.trim()).join('+');
-            // tagsToString = tags.lenght > 1 ? tags.value.split(',').map(tag => tag.trim()).join('+') : tags.value;
             document.getElementById('explore').value = '';
             console.log(tagsToString);
             setTags(tagsToString);
@@ -29,7 +28,7 @@ const Header = ({ setTags }) => {
             </div>
             {user.user && <>
                 <div className="row center">
-                    <input type="text" id="explore" name="Explore" placeholder="Key Words Separeted By comma (,)" />
+                    <input type="text" id="explore" name="Explore" placeholder="Explore In Google Api Books By Key Words Separeted By Comma (,)" />
                 </div>
                 <div className="row center">
                     <button type='button' id="explore-button" onClick={explore} className="btn-large waves-effect waves-light orange">Explore</button>

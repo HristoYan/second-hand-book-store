@@ -53,24 +53,24 @@ const BookCards = ({ book, onDeleteBook, onEditBook, setFavorite, setCart, cart,
                 </div>
             </div>
             <div className="buttons-div">
-                {user && <button className='navButon' onClick={onBookClick}>See More</button>}
-                {(user && userId !== book.sellerId) && <button className='navButon' onClick={() => onAddingCart(book)}>
+                {user && <button className='navButon see_more' onClick={onBookClick}>See More</button>}
+                {(user && userId !== book.sellerId) && <button className='navButon icon' onClick={() => onAddingCart(book)}>
                     <span id="logo-container" href="#" className="brand-logo">
                         <span className="large material-icons" >add_shopping_cart</span>
                     </span>
                 </button>}
-                {(user && userId !== book.sellerId) && <button className='navButon' onClick={onAddingFavorite}>
+                {(user && userId !== book.sellerId) && <button className='navButon icon' onClick={onAddingFavorite}>
                     <span id="logo-container" href="#" className="brand-logo">
                         <span className="large material-icons" >favorite</span>
                     </span>
                 </button>}
-                {(userId === book.sellerId || user?.role === "Admin") && <div>
-                    <button className='navButon' onClick={() => onDeleteBook(book.id)}>
+                {(userId === book.sellerId || user?.role === "Admin") && <div className='navButon'>
+                    <button className='navButon icon' onClick={() => onDeleteBook(book.id)}>
                         <span id="logo-container" href="#" className="brand-logo">
                             <span className="large material-icons" >delete_forever</span>
                         </span>
                     </button>
-                    <button className='navButon' onClick={() => onEditBook(book)}>
+                    <button className='navButon icon' onClick={() => onEditBook(book)}>
                         <span id="logo-container" href="#" className="brand-logo">
                             <span className="large material-icons" >edit</span>
                         </span>

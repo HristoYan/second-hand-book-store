@@ -4,7 +4,7 @@
 }
 
 .buttons-div{
-    display:inline-block;
+    display:flex;
     text-align: center;
-    margin-bottom: 10px;
+    margin-bottom: 20px;
 }

@@ -1,14 +1,32 @@
+button .buttons-div{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+
 button {
     margin: 5px;
     margin-bottom: 20px;
+    background-color: #2196F3;
 }
 p {
     margin: 0;
     margin-bottom: 0.25rem;
-    color: red;
     font-size: 1.5rem;
 }
 
 select {
     font-size: 20rem;
+}
+
+.see_more{
+    padding: 5px 0px;
+    margin-bottom: 20px;
+}
+button .navButon .icon{
+    padding-top: 10px;
+}
+
+#home{
+    padding-right: 20px;
 }

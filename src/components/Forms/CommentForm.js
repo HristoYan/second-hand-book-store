@@ -37,13 +37,15 @@ export const CommentForm = ({book, comment, setComment}) => {
             <div className="row">
                 <div className="input-field col s12">
                     <textarea id="comment" name='comment' className="materialize-textarea" 
-                    placeholder='Comment' value={comment} 
+                    placeholder='Comment' 
                     onChange={(e) => setComment(e.target.value)}></textarea>
                 </div>
             </div>
+            <div className="row center"> 
             <button className="btn waves-effect waves-light" type="button" onClick={commentSubmit}>Submit
                 <i className="material-icons right">send</i>
             </button>
+            </div>
         </div>
     )
 }

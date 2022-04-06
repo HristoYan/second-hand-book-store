@@ -7,10 +7,10 @@ const BookCards = ({ comment }) => {
         <>
             <div className='comment-container'>
                 <div className='comment-author'>
-                    From: <strong>{comment.creator}</strong>
+                    <strong>{comment.creator}:</strong>
                 </div>
                 <div className='comment-content'>
-                    Content: {comment.content}
+                    {comment.content}
                 </div>
             </div>
         </>
