@@ -26,6 +26,14 @@ export const LogInForm = () => {
         }),
 
         onSubmit: async (values) => {
+            // const body = {
+            //     username: values.username,
+            //     password: values.password
+
+            // }
+            // const user = await userApiClient.login(body);
+            // logIn(user);
+
             const response = await userApiClient.fetchUsers();
             const theOne = Array.from(response).filter(obj => obj.username == values.username && obj.password == values.password);
             logIn(theOne[0]);
