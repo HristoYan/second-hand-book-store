@@ -22,6 +22,15 @@ class UsersApiClient {
             method: 'POST',
             body: JSON.stringify(user)
         }));
+
+    }async login(user) {
+        return this.handleResponse(async () => fetch(USERS_API_BASE_URL + '/api/users', {
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            method: 'POST',
+            body: JSON.stringify(user)
+        }));
     }
 
     async deleteUser(userId) {
