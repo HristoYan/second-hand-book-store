@@ -1,6 +1,7 @@
 import React from 'react'
 import { useNavigate } from 'react-router-dom';
 import { useUser } from '../../hooks/useUser';
+import './Header.css';
 
 const Header = ({ setTags }) => {
     const navigate = useNavigate();
@@ -21,10 +22,10 @@ const Header = ({ setTags }) => {
         console.log(tagsToString);
     }
     return (
-        <div className="container">
-            <h1 className="header center orange-text">Start Reading For Cheap</h1>
+        <div id='header' className="container background">
+            <h1 className="header center white-text">Start Reading For Cheap</h1>
             <div className="row center">
-                <h5 className="header col s12 light">A modern way to get rid of your old books and make room for "NEW" ones</h5>
+                <h5 className="header col s12 light white-text"><strong>A modern way to get rid of your old books and make room for "NEW" ones</strong></h5>
             </div>
             {user.user && <>
                 <div className="row center">

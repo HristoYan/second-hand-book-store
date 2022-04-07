@@ -99,7 +99,7 @@ const Navigation = ({ setUserToEdit, search, setSearch, books, setTitle }) => {
           {
             !user && (
               <>
-                <li>
+                <li id='loginLi'>
                   <NavLink
                     to="/login"
                     className={({ isActive }) =>
@@ -136,7 +136,7 @@ const Navigation = ({ setUserToEdit, search, setSearch, books, setTitle }) => {
             </>}
           </a></li>
 
-          <li><a href='#' onClick={setUser}>{user?.username ?? "PLEASE REGISTER"}</a></li>
+          <li><a href='#' onClick={setUser}>{user?.username ?? undefined}</a></li>
           {!!user && <li><a onClick={onLogOut} href="#">Log out</a></li>}
         </ul>
 

@@ -1,14 +1,15 @@
 import React, { useState } from 'react';
 
-const CartCards = ({ car, changeTotale }) => {
+const CartCards = ({ car, changeTotale, setOrder }) => {
 
     const [checked, setChecked] = useState(false);
 
     const handleChange = (event) => {
         setChecked(!checked);
         console.log(event.target.checked);
+        console.log(event.target.name);
         if(!checked) {
-
+            
             changeTotale(Number(event.target.value))
         } else {
             changeTotale(-Number(event.target.value))

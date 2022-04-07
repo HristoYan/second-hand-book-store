@@ -35,7 +35,7 @@ export const SingleBookView = ({ bookId, comment, setComment }) => {
                         <p className="card-title grey-text text-darken-4">Author(s): {book.authors}</p>
                         <p className="card-title grey-text text-darken-4">Publisher: {book.publisher}</p>
                     </div>
-                    <div id="price">
+                    <div id="priceTag">
                         <p>Price: <strong>${book.price}</strong></p>
                     </div>
                     <p className="card-title grey-text text-darken-4">Condition: <strong>{book.condition}</strong> out of 5</p>

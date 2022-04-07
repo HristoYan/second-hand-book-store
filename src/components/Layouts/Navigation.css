@@ -1,22 +1,21 @@
-.logo-container .brand-logo{
+.logo-container .brand-logo {
     font-size: 100px;
 }
 
-.logo-container{
+.logo-container {
     margin-left: 10px;
 }
 
-.Nav-active{
+.Nav-active {
     color: white;
     background-color: orange;
-   
 }
 
-.logo-container.brand-logo{
+.logo-container.brand-logo {
     margin-right: 10px;
 }
 
-li{
+li {
     margin-left: 20px;
 }
 
@@ -24,10 +23,13 @@ li{
     width: 20%;
 }
 
-#face{
+#face {
     margin-left: 45px;
 }
 
-#add_book{
+#add_book {
+    margin-left: 50px;
+}
+#loginLi{
     margin-left: 50px;
 }

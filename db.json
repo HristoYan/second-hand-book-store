@@ -2,7 +2,7 @@
   "users": [
     {
       "name": "emo",
-      "username": "emoto",
+      "username": "Emoto",
       "password": "re12+fjk",
       "gender": "Male",
       "role": "Admin",
@@ -10,7 +10,7 @@
       "short_description": "short and fat but happy",
       "status": "Active",
       "date": "2022-3-19/11:51:53",
-      "lastModification": "2022-3-29/21:23:57",
+      "lastModification": "2022-4-7/22:23:41",
       "favorite": [],
       "id": 8
     },
@@ -84,7 +84,7 @@
       ]
     },
     {
-      "name": "Dimitar",
+      "name": "Dimitar#1",
       "username": "Mitko1",
       "password": "password123_?",
       "gender": "Male",
@@ -94,7 +94,7 @@
       "status": "Active",
       "favorites": [],
       "date": "2022-4-4/14:4:5",
-      "lastModification": "2022-4-4/14:4:5",
+      "lastModification": "2022-4-7/22:28:11",
       "id": 22
     }
   ],
@@ -287,6 +287,51 @@
       "date": "2022-4-4/16:44:49",
       "lastModification": "2022-4-4/16:44:49",
       "id": 10
+    },
+    {
+      "seller": "Hristoyan",
+      "sellerId": 18,
+      "condition": 2,
+      "price": 7,
+      "imgUrl": "http://books.google.com/books/content?id=VUSbAgAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
+      "title": "Java Generics and Collections",
+      "authors": [
+        "Maurice Naftalin",
+        "Philip Wadler"
+      ],
+      "publisher": "\"O'Reilly Media, Inc.\"",
+      "year": "2007",
+      "categories": [
+        "Computers"
+      ],
+      "description": "This book, written by one of the designers of generics, is a thorough explanation of how to use generics, and particularly, the effect this facility has on the way developers use collections.",
+      "comments": [],
+      "date": "2022-4-7/22:18:7",
+      "lastModification": "2022-4-7/22:18:7",
+      "id": 11
+    },
+    {
+      "seller": "Hristoyan",
+      "sellerId": 18,
+      "condition": 3,
+      "price": 8,
+      "imgUrl": "http://books.google.com/books/content?id=thLgzQEACAAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api",
+      "title": "React Cookbook",
+      "authors": [
+        "David Griffiths",
+        "Dawn Griffiths"
+      ],
+      "publisher": "O'Reilly Media",
+      "year": "2021-08-31",
+      "categories": [
+        "Computers"
+      ],
+      "description": "React helps you create and work on an app in just a few minutes. But learning how to put all the pieces together is hard. How do you validate a form? Or implement a complex multistep user action without writing messy code? How do you test your code? Make it reusable? Wire it to a backend? Keep it easy to understand? The React Cookbook delivers answers fast. Many books teach you how to get started, understand the framework, or use a component library with React, but very few provide examples to help you solve particular problems. This easy-to-use cookbook includes the example code developers need to unravel the most common problems when using React, categorized by topic area and problem. You'll learn how to: Build a single-page application in React using a rich UI Create progressive web applications that users can install and work with offline Integrate with backend services such as REST and GraphQL Automatically test for accessibility problems in your application Secure applications with fingerprints and security tokens using WebAuthn Deal with bugs and avoid common functional and performance problems",
+      "comments": [],
+      "date": "2022-4-7/22:19:32",
+      "lastModification": "2022-4-7/22:19:32",
+      "id": 12
     }
-  ]
+  ],
+  "orders": []
 }

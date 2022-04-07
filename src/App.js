@@ -48,7 +48,7 @@ function App() {
     const userList = await userApiClient.fetchUsers();
     console.log(userList);
     setUsers(userList);
-  }, [favorite]);
+  }, [favorite, users]);
 
   const navigate = useNavigate();
 

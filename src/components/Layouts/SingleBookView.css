@@ -5,7 +5,7 @@
     grid-auto-columns: minmax(200px, auto);
     grid-template-areas: 
     "title title title title"
-    "picture information information information"
+    "blanc picture information information"
     "details details details details";
     justify-items: center;
     align-items: center;
@@ -31,7 +31,7 @@ h3{
     margin-bottom: 40px;
     border: 1px solid black;
     border-radius: 5px;
-    padding: 20px;
+    padding: 50px;
 }
 
 .comment-button {
@@ -39,7 +39,7 @@ h3{
     margin: 40px;
 }
 
-#price {
+#priceTag {
     display: inline-block;
     border: 2px solid #2196F3;
     margin: 20px;
