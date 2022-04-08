@@ -24,15 +24,7 @@ const FavoriteCards = ({ book, setCart, cart, onBookSelect }) => {
     }
 
     async function onRemoveBook() {
-        // const oldFav = user.favorite;
-        // console.log(`OldFav: >>${JSON.stringify(userInfo)}`);
-        // console.log(`BookID: >>${JSON.stringify(user)}`);
-
-        // const index = oldFav.indexOf(book.id);
-        // console.log(`Index: >>${index}`);
-
-        // oldFav.splice(index, 1);
-        // console.log(`Left after Splice: >>${oldFav}`);
+       
         console.log(user);
         const newUser = await userApiClient.putUpdateUser({
             ...user,
