@@ -124,7 +124,7 @@ const Navigation = ({ setUserToEdit, search, setSearch, books, setTitle }) => {
           to="/cart"
           className={({ isActive }) =>
             isActive ? activeClassName : undefined}>
-          <span href="#" className="brand-logo logo-container">
+          <span id='shopping_cart' href="#" className="brand-logo logo-container">
             <span className="large material-icons shoping_cart" >shopping_cart</span>
           </span>
         </NavLink>) : undefined}

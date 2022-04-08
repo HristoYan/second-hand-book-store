@@ -48,7 +48,7 @@ function App() {
     const userList = await userApiClient.fetchUsers();
     console.log(userList);
     setUsers(userList);
-  }, [favorite]);
+  }, [userToEdit]);
 
   const navigate = useNavigate();
 
@@ -144,7 +144,7 @@ function App() {
           <Route path='/edit-user' element={<EditUser user={userToEdit} />} />
           <Route path='/add-book' element={<AddBookForm onBookSubmit={handleSubmitBook("add")} />} />
           <Route path='/edit-book' element={<EditBookForm onBookSubmit={handleSubmitBook("edit")} initialValue={bookToEdit} />} />
-          <Route path='/my-books' element={<MyBooks books={books} onDeleteBook={deleteBook} onEditBook={editBook} />} />
+          <Route path='/my-books' element={<MyBooks books={books} onDeleteBook={deleteBook} onEditBook={editBook} onBookSelect={setBookSelect}/>} />
           <Route path='/sell-gbook' element={<GBookToSellForm book={bookToSell} onBookSubmit={handleSubmitBook("add")} />} />
           <Route path='/favorites' element={<Favorites users={users} books={books} favorite={favorite} setCart={setCart} onBookSelect={setBookSelect} />} />
 

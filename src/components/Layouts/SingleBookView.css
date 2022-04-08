@@ -13,6 +13,7 @@
 
 h3{
     grid-area: title;
+    color: white;
 }
 
 #img{
@@ -23,6 +24,7 @@ h3{
 
 .information{
     grid-area: information;
+    color: white;
     
 }
 
@@ -32,6 +34,8 @@ h3{
     border: 1px solid black;
     border-radius: 5px;
     padding: 50px;
+    color: white;
+
 }
 
 .comment-button {

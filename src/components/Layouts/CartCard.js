@@ -1,18 +1,17 @@
 import React, { useState } from 'react';
 
-const CartCards = ({ car, changeTotale, setOrder }) => {
+const CartCards = ({ product, addProduct, removeProduct }) => {
 
-    const [checked, setChecked] = useState(false);
+    const [checked, setChecked] = useState(true);
 
     const handleChange = (event) => {
         setChecked(!checked);
         console.log(event.target.checked);
         console.log(event.target.id);
-        if(!checked) {
-            
-            changeTotale(Number(event.target.value))
+        if(!event.target.checked) {
+            removeProduct(event.target.id, +event.target.value);
         } else {
-            changeTotale(-Number(event.target.value))
+            addProduct(event.target.id, +event.target.value);
         }
     };
     
@@ -22,14 +21,14 @@ const CartCards = ({ car, changeTotale, setOrder }) => {
                 <div className="card-panel grey lighten-5 z-depth-1">
                     <div className="row valign-wrapper">
                         <div className="col s2">
-                            <img src={car.imgUrl} alt="book image" className="circle responsive-img" />
+                            <img src={product.imgUrl} alt="book image" className="circle responsive-img" />
                         </div>
                         <div className="col s10">
                             <span className="black-text">
-                                <h5>{car.title}</h5> - for ${car.price}
+                                <h5>{product.title}</h5> - for ${product.price}
                                 <p>
                                     <label>
-                                        <input type="checkbox" className="filled-in" id={car.id} name={car.title} value={car.price} checked={checked} onChange={handleChange} />
+                                        <input type="checkbox" className="filled-in" id={product.id} name={product.title} value={product.price} checked={checked} onChange={handleChange} />
                                         <span>Check out</span>
                                     </label>
                                 </p>

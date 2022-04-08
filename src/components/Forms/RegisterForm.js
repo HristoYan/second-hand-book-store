@@ -59,6 +59,7 @@ export const RegisterForm = () => {
         onSubmit: async (values) => {
             console.log(values);
             const response = await userApiClient.postNewUser(values);
+            console.log(response);
             logIn(response);
             navigate("/");
         }

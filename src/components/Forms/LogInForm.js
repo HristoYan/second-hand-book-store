@@ -34,9 +34,6 @@ export const LogInForm = () => {
             const user = await userApiClient.login(body);
             logIn(user);
             console.log(user);
-            // const response = await userApiClient.fetchUsers();
-            // const theOne = Array.from(response).filter(obj => obj.username == values.username && obj.password == values.password);
-            // logIn(theOne[0]);
             navigate("/");
 
         }

@@ -32,16 +32,16 @@ export const SingleBookView = ({ bookId, comment, setComment }) => {
                 </div>
                 <div className="information">
                     <div id="authorDiv">
-                        <p className="card-title grey-text text-darken-4">Author(s): {book.authors}</p>
-                        <p className="card-title grey-text text-darken-4">Publisher: {book.publisher}</p>
+                        <p className="card-title grey-text text-white-4">Author(s): {book.authors}</p>
+                        <p className="card-title grey-text text-white-4">Publisher: {book.publisher}</p>
                     </div>
                     <div id="priceTag">
                         <p>Price: <strong>${book.price}</strong></p>
                     </div>
-                    <p className="card-title grey-text text-darken-4">Condition: <strong>{book.condition}</strong> out of 5</p>
+                    <p className="card-title grey-text text-white-4">Condition: <strong>{book.condition}</strong> out of 5</p>
                 </div>
                 <div className="info">
-                    <p className="card-title grey-text text-darken-4">Description: {`\t`}
+                    <p className="card-title grey-text text-white-4">Description: {`\t`}
                         {book.description}
                     </p>
                 </div>
