@@ -26,17 +26,17 @@ export const LogInForm = () => {
         }),
 
         onSubmit: async (values) => {
-            // const body = {
-            //     username: values.username,
-            //     password: values.password
+            const body = {
+                username: values.username,
+                password: values.password
 
-            // }
-            // const user = await userApiClient.login(body);
-            // logIn(user);
-
-            const response = await userApiClient.fetchUsers();
-            const theOne = Array.from(response).filter(obj => obj.username == values.username && obj.password == values.password);
-            logIn(theOne[0]);
+            }
+            const user = await userApiClient.login(body);
+            logIn(user);
+            console.log(user);
+            // const response = await userApiClient.fetchUsers();
+            // const theOne = Array.from(response).filter(obj => obj.username == values.username && obj.password == values.password);
+            // logIn(theOne[0]);
             navigate("/");
 
         }
@@ -63,10 +63,10 @@ export const LogInForm = () => {
                 {formik.touched.password && formik.errors.password ? <p>{formik.errors.password}</p> : null}
 
                 <div className="recipe-submit-buttons">
-                        <button className="btn waves-effect waves-light" type="submit" name="action" >Log In
-                            <i className="material-icons right">send</i>
-                        </button>
-                  
+                    <button className="btn waves-effect waves-light" type="submit" name="action" >Log In
+                        <i className="material-icons right">send</i>
+                    </button>
+
                     <button className="btn waves-effect waves-light red" type="reset" name="action">Reset
                         <i className="material-icons right">cancel</i>
                     </button>

@@ -51,14 +51,8 @@ const GBookCards = ({ book, setBookToSell, setTitle, setMessage }) => {
                 </div>
             </div>
             <div>
-                {user.role==='Seller'|| user.role ==='Admin' && <button className='navButon' onClick={sellThisBook}>Sell This Book</button>}
+                {(user.role==='Seller'|| user.role ==='Admin') && <button className='navButon' onClick={sellThisBook}>Sell This Book</button>}
                 {user && <button className='navButon' onClick={checkThisBook}>Check if Available</button>}
-                {/* {user && <button className='navButon' onClick={() => onAddingFavorite(recipe)}>Favorite</button>}
-        {(userId === recipe.authorId || user?.role === "Admin") && <div>
-            <button className='navButon' onClick={() => deleteRecipe(recipe.id)}>Delete</button>
-            <button className='navButon' onClick={() => onRecipeEdit(recipe)}>Edit</button>
-        </div>
-        } */}
             </div>
         </div >
     )

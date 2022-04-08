@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
 
 export const useUser = () => {
-    const [user, setUser] = useState(JSON.parse(sessionStorage.getItem("user")));
-
+    const [user, setUser] = useState(JSON.parse(sessionStorage.getItem("user")).user);
+    console.log(user);
     const onStorageUpdate = () => {
         setUser(JSON.parse(sessionStorage.getItem("user")));
     }

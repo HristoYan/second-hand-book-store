@@ -44,13 +44,13 @@ const Navigation = ({ setUserToEdit, search, setSearch, books, setTitle }) => {
         {user ? (<NavLink
           to="/">
           <span href="#" className="brand-logo logo-container">
-            <span className="large material-icons" >book</span>
+            <span id='book-icon' className="large material-icons" >book</span>
           </span>
         </NavLink>) :
           (<NavLink
             to="/login">
             <span href="#" className="brand-logo logo-container">
-              <span className="large material-icons" >book</span>
+              <span id='book-icon' className="large material-icons" >book</span>
             </span>
           </NavLink>)}
 
@@ -123,7 +123,7 @@ const Navigation = ({ setUserToEdit, search, setSearch, books, setTitle }) => {
           className={({ isActive }) =>
             isActive ? activeClassName : undefined}>
           <span href="#" className="brand-logo logo-container">
-            <span className="large material-icons" >shopping_cart</span>
+            <span className="large material-icons shoping_cart" >shopping_cart</span>
           </span>
         </NavLink>) : undefined}
 
@@ -131,7 +131,7 @@ const Navigation = ({ setUserToEdit, search, setSearch, books, setTitle }) => {
           <li><a href='#'>
             {!!user && <> <input id='search' type="text" name="search" value={search} onChange={(e) => setSearch(e.target.value)} placeholder="Search title" />
               <span href="#" className="brand-logo logo-container">
-                <span className="large material-icons" onClick={searchTitle}>search</span>
+                <span id='search-btn' className="large material-icons" onClick={searchTitle}>search</span>
               </span>
             </>}
           </a></li>

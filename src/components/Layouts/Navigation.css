@@ -15,12 +15,20 @@
     margin-right: 10px;
 }
 
+#book-icon{
+    margin-left: 0px;
+}
+
 li {
     margin-left: 20px;
 }
 
-#searchbar {
-    width: 20%;
+#search {
+    width: 100%;
+}
+
+#search-btn{
+    margin-left: 0px;
 }
 
 #face {

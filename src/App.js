@@ -4,7 +4,7 @@ import Main from './components/Layouts/Main';
 import Navigation from './components/Layouts/Navigation';
 import Header from './components/Layouts/Header';
 import Footer from './components/Layouts/Footer';
-import BookApi from './services/books-api-client';
+import bookApiClient from './services/books-api-client';
 import UserApi from './services/user-api-client';
 import GBooks from './components/Layouts/GBooks';
 import { Route, Routes, useNavigate } from 'react-router-dom';
@@ -48,7 +48,7 @@ function App() {
     const userList = await userApiClient.fetchUsers();
     console.log(userList);
     setUsers(userList);
-  }, [favorite, users]);
+  }, [favorite]);
 
   const navigate = useNavigate();
 
@@ -59,7 +59,7 @@ function App() {
   console.log(favorite);
 
   useEffect(() => {
-    BookApi.fetchBooksForSell()
+    bookApiClient.fetchBooksForSell()
       .then(results => {
         setBooks(results);
         clearMessagesAndErrors();
@@ -67,11 +67,11 @@ function App() {
       .catch(err => {
         setErrors(err);
       });
-  }, [comment]);
+  }, []);
 
   useEffect(() => {
     console.log(tags);
-    BookApi.fetchBooksFromGoogleApi(tags)
+    bookApiClient.fetchBooksFromGoogleApi(tags)
       .then(results => {
         setGBooks(results.items);
         console.log(gBooks);
@@ -97,7 +97,7 @@ function App() {
   }
 
   async function deleteBook(bookId) {
-    BookApi.deleteBook(bookId);
+    bookApiClient.deleteBook(bookId);
     setBooks(books.filter(book => book.id !== bookId));
 
     setMessages(`Book deleted successfully`)
@@ -105,7 +105,7 @@ function App() {
 
   const handleSubmitBook = (Mode) => (book) => {
     if (Mode === 'add') {
-      BookApi.postNewBook(book)
+      bookApiClient.postNewBook(book)
         .then(newBook => {
           setBooks([...books, newBook]);
           clearMessagesAndErrors();
@@ -115,7 +115,7 @@ function App() {
           setErrors(err);
         })
     } else if (Mode === 'edit') {
-      BookApi.putUpdateBook(book)
+      bookApiClient.putUpdateBook(book)
         .then(edited => {
           setBooks(books.map(b => b.id === book.id ? book : b));
           clearMessagesAndErrors();

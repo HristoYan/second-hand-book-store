@@ -7,7 +7,7 @@ const CartCards = ({ car, changeTotale, setOrder }) => {
     const handleChange = (event) => {
         setChecked(!checked);
         console.log(event.target.checked);
-        console.log(event.target.name);
+        console.log(event.target.id);
         if(!checked) {
             
             changeTotale(Number(event.target.value))
@@ -29,7 +29,7 @@ const CartCards = ({ car, changeTotale, setOrder }) => {
                                 <h5>{car.title}</h5> - for ${car.price}
                                 <p>
                                     <label>
-                                        <input type="checkbox" className="filled-in" name={car.title} value={car.price} checked={checked} onChange={handleChange} />
+                                        <input type="checkbox" className="filled-in" id={car.id} name={car.title} value={car.price} checked={checked} onChange={handleChange} />
                                         <span>Check out</span>
                                     </label>
                                 </p>
