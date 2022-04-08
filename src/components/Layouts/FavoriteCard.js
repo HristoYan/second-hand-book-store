@@ -4,8 +4,8 @@ import { useUser } from '../../hooks/useUser';
 import { useNavigate, useParams } from 'react-router-dom';
 import userApiClient from '../../services/user-api-client';
 
-const FavoriteCards = ({ book, setCart, cart, onBookSelect, userInfo }) => {
-    const { user } = useUser();
+const FavoriteCards = ({ book, setCart, cart, onBookSelect }) => {
+    const { user, setNewUser } = useUser();
     const userId = user?.id;
     const navigate = useNavigate();
     const params = useParams();
@@ -24,19 +24,21 @@ const FavoriteCards = ({ book, setCart, cart, onBookSelect, userInfo }) => {
     }
 
     async function onRemoveBook() {
-        const oldFav = userInfo.favorite;
-        console.log(`OldFav: >>${oldFav}`);
-        console.log(`BookID: >>${book.id}`);
+        // const oldFav = user.favorite;
+        // console.log(`OldFav: >>${JSON.stringify(userInfo)}`);
+        // console.log(`BookID: >>${JSON.stringify(user)}`);
 
-        const index = oldFav.indexOf(book.id);
-        console.log(`Index: >>${index}`);
+        // const index = oldFav.indexOf(book.id);
+        // console.log(`Index: >>${index}`);
 
-        oldFav.splice(index, 1);
-        console.log(`Left after Splice: >>${oldFav}`);
-        await userApiClient.putUpdateUser({
+        // oldFav.splice(index, 1);
+        // console.log(`Left after Splice: >>${oldFav}`);
+        console.log(user);
+        const newUser = await userApiClient.putUpdateUser({
             ...user,
-            favorite: oldFav
+            favorite: user.favorite.filter(fav => fav !== book.id)
         });
+        setNewUser(newUser);
         navigate('/favorites')
 
     }

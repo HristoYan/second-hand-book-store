@@ -2,6 +2,7 @@ import React from 'react';
 import { useUser } from '../../hooks/useUser';
 import './Navigation.css';
 import { NavLink, useNavigate } from "react-router-dom";
+import userApiClient from '../../services/user-api-client';
 
 const Navigation = ({ setUserToEdit, search, setSearch, books, setTitle }) => {
   const { user, logOut } = useUser();
@@ -15,8 +16,9 @@ const Navigation = ({ setUserToEdit, search, setSearch, books, setTitle }) => {
     navigate("/");
   }
 
-  function setUser() {
-    setUserToEdit(user);
+  async function setUser() {
+    const userCorrect = await userApiClient.fetchUserById(user.id);
+    setUserToEdit(userCorrect);
     navigate('/edit-user');
   }
 

@@ -40,6 +40,7 @@ class UsersApiClient {
     }
 
     async putUpdateUser(user) {
+        console.log(user);
         return this.handleResponse(async () => fetch(USERS_API_BASE_URL + '/users/' + user.id, {
             headers: {
                 'Content-Type': 'application/json'

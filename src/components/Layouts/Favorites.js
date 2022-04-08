@@ -9,44 +9,45 @@ import FavoriteList from './FavoriteList';
 const Favorites = ({ users, books, favorite, onDeleteBook, setCart, onBookSelect }) => {
     console.log(books);
     const { user } = useUser();
-    const [favBooks, setFavBooks] = useState([]);
-    const [userInfo, setUserInfo] = useState();
+    // const [favBooks, setFavBooks] = useState([]);
+    // const [userInfo, setUserInfo] = useState();
 
-    let booksId = books.map(el => el.id);
-    const oldUserInfo = users.filter(u => u.id === user.id);
-    const filteredFav = (oldUserInfo[0].favorite).filter(e => booksId.includes(e));
+    // let booksId = books.map(el => el.id);
+    // const oldUserInfo = users.filter(u => u.id === user.id);
+    // const filteredFav = (oldUserInfo[0].favorite).filter(e => booksId.includes(e));
+    
+    const favBooks = books.filter(book => user.favorite.includes(book.id) )
+    // if (!!favorite) {
+    //     if (!favoriteBooks.includes(favorite)) {
+    //         favoriteBooks.push(favorite);
+    //     }
+    // }
 
-    if (!!favorite) {
-        if (!filteredFav.includes(favorite)) {
-            filteredFav.push(favorite);
-        }
-    }
+    // console.log(`FavBooksId: ${favoriteBooks}`);
 
-    console.log(`FavBooksId: ${filteredFav}`);
+    // let resultedBooks = [];
 
-    let resultedBooks = [];
+    // for (const favId of favoriteBooks) {
+    //     const temp = books.filter(book => book.id === favId);
+    //     resultedBooks.push(temp[0]);
+    // }
 
-    for (const favId of filteredFav) {
-        const temp = books.filter(book => book.id === favId);
-        resultedBooks.push(temp[0]);
-    }
+    // console.log(`favorite books Ids: ${favoriteBooks}`);
 
-    console.log(`favorite books Ids: ${filteredFav}`);
-
-    useEffect(async () => {
-        const newUser = {
-            ...oldUserInfo[0],
-            favorite: filteredFav
-        }
-        console.log(`NewUser: >>>${JSON.stringify(newUser)}`);
-        if (!!newUser) {
-            await UserApi.putUpdateUser(newUser);
-        }
-        if (resultedBooks) {
-            setFavBooks(resultedBooks);
-            setUserInfo(newUser);
-        }
-    }, [favorite]);
+    // useEffect(async () => {
+    //     const newUser = {
+    //         ...user,
+    //         favorite: favoriteBooks
+    //     }
+    //     console.log(`NewUser: >>>${JSON.stringify(newUser)}`);
+    //     if (!!newUser) {
+    //         await UserApi.putUpdateUser(newUser);
+    //     }
+    //     if (resultedBooks) {
+    //         setFavBooks(resultedBooks);
+    //         setUserInfo(newUser);
+    //     }
+    // }, [favorite]);
 
 
     return (
@@ -55,7 +56,7 @@ const Favorites = ({ users, books, favorite, onDeleteBook, setCart, onBookSelect
                 <div className="section">
                     <h2>Your Favorite Books</h2>
                     <div className="row">
-                        <FavoriteList books={favBooks} userInfo={userInfo} onDeleteBook={onDeleteBook} setCart={setCart} onBookSelect={onBookSelect}/>
+                        <FavoriteList books={favBooks} onDeleteBook={onDeleteBook} setCart={setCart} onBookSelect={onBookSelect}/>
                     </div>
                 </div>
             </div > : <h2>Nothing in  Favorites yet!</h2>}

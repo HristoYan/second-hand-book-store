@@ -2,16 +2,25 @@ import React from 'react';
 import './BookCards.css';
 import { useUser } from '../../hooks/useUser';
 import { useNavigate, useParams } from 'react-router-dom';
+import userApiClient from '../../services/user-api-client';
 
 const BookCards = ({ book, onDeleteBook, onEditBook, setFavorite, setCart, cart, onBookSelect }) => {
-    const { user } = useUser();
+    const { user, setNewUser } = useUser();
     const userId = user?.id;
     const navigate = useNavigate();
-    const params = useParams();
+    // const params = useParams();
     console.log(cart);
 
-    function onAddingFavorite() {
-
+    async function onAddingFavorite() {
+        console.log(user);
+        const updatedUser = {
+            ...user,
+            favorite: [...user.favorite, book.id]
+        }
+        console.log(`updatedUser: ${JSON.stringify(updatedUser)}`);
+        const newUser = await userApiClient.putUpdateUser(updatedUser);
+        
+        setNewUser(newUser);
         console.log(`Book Favorite: ${book.id}`);
         setFavorite(book.id);
         navigate("/favorites");

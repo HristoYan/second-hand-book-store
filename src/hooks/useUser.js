@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from "react";
 
 export const useUser = () => {
-    const [user, setUser] = useState(JSON.parse(sessionStorage.getItem("user")).user);
+    const [user, setUser] = useState(JSON.parse(sessionStorage.getItem("user")));
     console.log(user);
+
     const onStorageUpdate = () => {
         setUser(JSON.parse(sessionStorage.getItem("user")));
     }
@@ -18,13 +19,20 @@ export const useUser = () => {
     }
 
     const logIn = (user) => {
+        sessionStorage.setItem("user", JSON.stringify(user.user));
+        window.dispatchEvent(new Event('storageUpdate'));
+    }
+
+    const setNewUser = (user) => {
         sessionStorage.setItem("user", JSON.stringify(user));
         window.dispatchEvent(new Event('storageUpdate'));
     }
 
+
     return {
         user,
         logOut,
-        logIn
+        logIn,
+        setNewUser
     };
 }

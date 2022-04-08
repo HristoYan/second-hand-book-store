@@ -33,7 +33,7 @@ export const EditUser = ({ user }) => {
         }),
         onSubmit: async (values) => {
             await userApiClient.putUpdateUser(values);
-            navigate("/users");
+            navigate("/");
         }
     });
 
