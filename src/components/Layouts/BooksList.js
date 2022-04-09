@@ -1,7 +1,6 @@
 import BookCards from "./BookCards";
 
 const BookList = ({ books, onDeleteBook, onEditBook, setFavorite, setCart, cart, onBookSelect }) => {
-    console.log(cart);
     return (
         <div className="BookList-items">
             {

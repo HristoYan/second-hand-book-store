@@ -1,23 +1,27 @@
 
-const BOOKS_API_BASE_URL = 'http://127.0.0.1:5000/api';
+const ORDERS_API_BASE_URL = 'http://127.0.0.1:5000/api';
 
 class OrdersApiClient {
     constructor(baserApiUrl) {
         this.baserApiUrl = baserApiUrl;
     }
 
-  
-    async fetchBookById(bookId) {
-        return this.handleResponse(async () => fetch(`${BOOKS_API_BASE_URL}/books/${bookId}`));
+
+    async fetchOrderById(orderId) {
+        return this.handleResponse(async () => fetch(`${ORDERS_API_BASE_URL}/orders/books/${orderId}`));
+    }
+
+    async fetchOrderByUserId(userId) {
+        return this.handleResponse(async () => fetch(`${ORDERS_API_BASE_URL}/orders/${userId}`));
     }
 
     async postNewOrder(userId, orderId, books, total) {
-        return this.handleResponse(async () => fetch(`${BOOKS_API_BASE_URL}/orders`, {
+        return this.handleResponse(async () => fetch(`${ORDERS_API_BASE_URL}/orders`, {
             headers: {
                 'Content-Type': 'application/json'
             },
             method: 'POST',
-            body: JSON.stringify({userId, orderId, books, total})
+            body: JSON.stringify({ userId, orderId, books, total })
         }));
     }
 
@@ -39,7 +43,7 @@ class OrdersApiClient {
     }
 }
 
-export default new OrdersApiClient(BOOKS_API_BASE_URL);
+export default new OrdersApiClient(ORDERS_API_BASE_URL);
 
 
 

@@ -6,6 +6,7 @@ import orderApiClient from "../../services/order-api-client";
 import { useUser } from "../../hooks/useUser";
 import { v4 as uuid } from "uuid";
 import './CartList.css';
+import userApiClient from "../../services/user-api-client";
 
 const CartList = ({ cart, setCart }) => {
     const {user} = useUser();
@@ -33,12 +34,18 @@ const CartList = ({ cart, setCart }) => {
 
     const handleClick = async() => {
         const orderId= uuid();
-        // console.log(`cart: ${JSON.stringify(cart)}`);
         const books = cart.filter(book => orderedBooks.includes(book.id));
         console.log(`cart: ${JSON.stringify(books)}`);
-
         const response = await orderApiClient.postNewOrder(user.id, orderId, books, totale.toFixed(2));
+        console.log(`response: ${JSON.stringify(response)}`);
         if(response.status === 'ok') {
+            console.log(`Orders: <><> ${user.orders}`);
+            
+            const resp = await userApiClient.putUpdateUser({
+                ...user,
+                 orders: [...user.orders, orderId]
+                });
+                console.log(`resp: ${resp}`);
             setCart([]);
             setTotale(0);
             if(!alert(`You have successfully bought books for: $${totale} with order id: ${orderId}`)) { navigate('/')}

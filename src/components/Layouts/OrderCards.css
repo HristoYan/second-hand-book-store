@@ -1,0 +1,12 @@
+#order-card{
+    display: inline-block;
+    background-color: #2196F3;
+    border-radius: 10px;
+}
+
+.card-content .order{
+    display: inline;
+    background-color: #2196F3;
+    border-radius: 10px;
+
+}

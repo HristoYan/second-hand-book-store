@@ -23,6 +23,7 @@ import userApiClient from './services/user-api-client';
 import { SingleBookView } from './components/Layouts/SingleBookView';
 import Titled from './components/Layouts/Titled';
 import Loader from './components/utilities/Loader';
+import OrdersView from './components/Layouts/OrdersView';
 
 function App() {
   const [tags, setTags] = useState();
@@ -38,6 +39,7 @@ function App() {
   const [search, setSearch] = useState('');
   const [bookToEdit, setBookToEdit] = useState();
   const [comment, setComment] = useState({});
+  const [orders, setOrders] = useState([]);
   const [errors, setErrors] = useState();
   const [messages, setMessages] = useState();
   const { user } = useUser();
@@ -126,12 +128,21 @@ function App() {
         })
     }
   }
+
+  function titleCheck (title) {
+    console.log(`title: ${title}`);
+    const theTitle = books.filter(book => book.title === title);
+    console.log(`THE TITLE: ${theTitle}`);
+    setTitle(theTitle)
+    navigate('/title-check');
+}
+
   console.log(`Titelet App: ${JSON.stringify(title)}`);
 
   return (
     <>
       <div className="App">
-        <Navigation setUserToEdit={setUserToEdit} search={search} setSearch={setSearch} books={books} setTitle={setTitle} />
+        <Navigation setUserToEdit={setUserToEdit} search={search} setSearch={setSearch} books={books} setTitle={setTitle} setOrders={setOrders} />
         <Header setTags={setTags} />
 
         <Routes>
@@ -139,7 +150,7 @@ function App() {
           <Route path='/login' element={<LogInForm />} />
 
           <Route path='/' element={<Main books={books} onBookSelect={setBookSelect} onDeleteBook={deleteBook} onEditBook={editBook} setFavorite={setFavorite} setCart={setCart} cart={cart} />} />
-          <Route path='/explore' element={<GBooks books={gBooks} setBookToSell={setBookToSell} setTitle={setTitle} setMessage={setMessages} />} />
+          <Route path='/explore' element={<GBooks books={gBooks} setBookToSell={setBookToSell} titleCheck={titleCheck} setMessage={setMessages} />} />
           <Route path='/users' element={<Users users={users} setUsers={setUsers} onEditUser={editUser} onDeleteUser={deleteUser} />} />
           <Route path='/edit-user' element={<EditUser user={userToEdit} />} />
           <Route path='/add-book' element={<AddBookForm onBookSubmit={handleSubmitBook("add")} />} />
@@ -157,6 +168,7 @@ function App() {
             }
           />
           <Route path='/book' element={<SingleBookView bookId={bookSelect} comment={comment} setComment={setComment}/>} />
+          <Route path='/orders' element={<OrdersView orders={orders}/>} />
           <Route path='/title-check' element={<Titled title={title} onBookSelect={setBookSelect} setFavorite={setFavorite} setCart={setCart} cart={cart} />} />
           <Route path='/*' element={<h2>You Probably Lost Yourself</h2>} />
 

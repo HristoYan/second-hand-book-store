@@ -40,16 +40,16 @@ const FavoriteCards = ({ book, setCart, cart, onBookSelect }) => {
         navigate(`/book`);
     }
     return (
-        <div className="card col s12 m4" style={{ height: "600px", width: "370px", margin: "10px" }}>
+        <div className="card col s12 m4" style={{ height: "500px", width: "370px", margin: "10px" }}>
             <div className="card-image waves-effect waves-block waves-light">
                 <img id="book-card" className="Book-image activator responsive-img" src={book.imgUrl} alt="Book Picture" />
             </div>
             <div className="card-content">
                 <span className="card-title activator grey-text text-darken-4">{book.title}<i className="material-icons right">more_vert</i></span>
-                <p className="card-title grey-text text-darken-4">Authors: {book.authors.join(', ')}</p>
             </div>
             <div className="card-reveal">
                 <span className="card-title grey-text text-darken-4">{book.title}<i className="material-icons right">close</i></span>
+                <p className="card-title grey-text text-darken-4">Authors: {book.authors.join(', ')}</p>
                 <p>Price: ${book.price}</p>
                 <p className="card-title grey-text text-darken-4">Condition: {book.condition} out of 5</p>
                 <p className="card-title grey-text text-darken-4">Seller: {book.seller}</p>

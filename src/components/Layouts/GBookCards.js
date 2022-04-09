@@ -1,10 +1,9 @@
 
 import { useNavigate } from 'react-router-dom';
 import { useUser } from '../../hooks/useUser';
-import BookApi from '../../services/books-api-client';
 import './GBookCards.css';
 
-const GBookCards = ({ book, setBookToSell, setTitle, setMessage }) => {
+const GBookCards = ({ book, setBookToSell, titleCheck, setMessage }) => {
     const {user} = useUser();
     const navigate = useNavigate();
 
@@ -25,17 +24,17 @@ const GBookCards = ({ book, setBookToSell, setTitle, setMessage }) => {
         navigate('/sell-gbook');
     }
 
-    async function checkThisBook() {
-        const bookTitle = await BookApi.fetchBookByTitle(book.volumeInfo.title);
+    function checkThisBook() {
+        const bookTitle = book.volumeInfo.title;
         if(!(!!bookTitle)) {
             setMessage("We are sorry but the book is not available!");
         }
-        setTitle(bookTitle);
-        navigate('/title-check');
+        titleCheck(bookTitle);
+        
     }
 
     return (
-        <div className="card col s12 m4" style={{ height: "540px", width: "370px", margin: "10px"}}>
+        <div id='gBook' className="card col s12 m4" style={{ height: "540px", width: "370px", margin: "10px"}}>
             <div className="card-image waves-effect waves-block waves-light">
                 <img id="gbook" className="GBook-image activator responsive-img" src={book.volumeInfo.imageLinks.thumbnail} alt="Book Picture" />
             </div>
@@ -50,7 +49,7 @@ const GBookCards = ({ book, setBookToSell, setTitle, setMessage }) => {
                         {book.volumeInfo.description}
                 </div>
             </div>
-            <div>
+            <div id='gButton'>
                 {(user.role==='Seller'|| user.role ==='Admin') && <button className='navButon' onClick={sellThisBook}>Sell This Book</button>}
                 {user && <button className='navButon' onClick={checkThisBook}>Check if Available</button>}
             </div>

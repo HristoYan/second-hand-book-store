@@ -23,10 +23,6 @@ class BooksApiClient {
         return this.handleResponse(async () => fetch(`${BOOKS_API_BASE_URL}/books/${bookId}`));
     }
 
-    async fetchBookByTitle(title) {
-        return this.handleResponse(async () => fetch(`${BOOKS_API_BASE_URL}/books?title=${title}`));
-    }
-
     async postNewBook(book) {
         return this.handleResponse(async () => fetch(`${BOOKS_API_BASE_URL}/books`, {
             headers: {

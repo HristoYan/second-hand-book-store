@@ -26,6 +26,7 @@ export const RegisterForm = () => {
             short_description: '',
             status: 'Active',
             favorite: [],
+            orders: [],
             date: dateTime,
             lastModification: dateTime
         },
@@ -60,8 +61,7 @@ export const RegisterForm = () => {
             console.log(values);
             const response = await userApiClient.postNewUser(values);
             console.log(response);
-            logIn(response);
-            navigate("/");
+            navigate("/login");
         }
     });
 

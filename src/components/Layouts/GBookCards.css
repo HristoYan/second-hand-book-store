@@ -1,3 +1,9 @@
 #gbook{
     height: 300px;
+    padding-top: 10px;
+}
+
+#gButton{
+    display:inline-block;
+    text-align: center;
 }

@@ -3,8 +3,9 @@ import { useUser } from '../../hooks/useUser';
 import './Navigation.css';
 import { NavLink, useNavigate } from "react-router-dom";
 import userApiClient from '../../services/user-api-client';
+import orderApiClient from '../../services/order-api-client';
 
-const Navigation = ({ setUserToEdit, search, setSearch, books, setTitle }) => {
+const Navigation = ({ setUserToEdit, search, setSearch, books, setTitle, setOrders }) => {
   const { user, logOut } = useUser();
 
   const isAdmin = user?.role === "Admin";
@@ -36,6 +37,18 @@ const Navigation = ({ setUserToEdit, search, setSearch, books, setTitle }) => {
     setTitle([books[index]]);
     document.getElementById('search').value = '';
     navigate("/title-check");
+  }
+
+  async function handleOrders() {
+    console.log(`ORDERS:`, user.orders);
+    const orders = await orderApiClient.fetchOrderByUserId(user.id);
+    console.log(`orders>>>>>`, orders.orders);
+    if (!orders) {
+      noOrders();
+    }
+    setOrders(orders.orders);
+    navigate('/orders')
+
   }
 
   const activeClassName = "Nav-active";
@@ -129,6 +142,15 @@ const Navigation = ({ setUserToEdit, search, setSearch, books, setTitle }) => {
           </span>
         </NavLink>) : undefined}
 
+        {user ? (<NavLink
+          to="/?"
+          className={({ isActive }) =>
+            isActive ? activeClassName : undefined}>
+          <span id='orders' href="#" className="brand-logo logo-container">
+            <span className="large material-icons shoping_cart" onClick={handleOrders} >assignment</span>
+          </span>
+        </NavLink>) : undefined}
+
         <ul className="right hide-on-med-and-down">
           <li><a href='#'>
             {!!user && <> <input id='search' type="text" name="search" value={search} onChange={(e) => setSearch(e.target.value)} placeholder="Search title" />
@@ -148,3 +170,7 @@ const Navigation = ({ setUserToEdit, search, setSearch, books, setTitle }) => {
 }
 
 export default Navigation
+
+const noOrders = () => {
+  return <h2>You Have No Orders Yet</h2>
+}
