@@ -10,34 +10,35 @@
 .Nav-active {
     color: white;
     background-color: orange;
+    
 }
 
-#shopping_cart{
-    margin-left: 80px;
-}
-#assignment{
-    margin-left: 180px;
-}
 #book-icon{
-    margin-left: 0px;
+    margin-left: 10px;
 }
-
-li {
-    margin-left: 20px;
+#favorite{
+    margin-left: 50px;
 }
-
+#shopping_cart{
+    margin-left: 90px;
+}
+#orders{
+    margin-left: 130px;
+}
+#face {
+    margin-left: 170px;
+}
 #search {
     width: 100%;
 }
 
 #search-btn{
-    margin-left: 0px;
+    margin-right: 0px;
 }
 
-#face {
-    margin-left: 80px;
+#user-name{
+    padding-left: 30px;
 }
-
 #add_book {
     margin-left: 50px;
 }

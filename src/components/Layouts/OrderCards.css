@@ -2,11 +2,15 @@
     display: inline-block;
     background-color: #2196F3;
     border-radius: 10px;
+    color: white;
+    height: 200px;
+    justify-content: center;
+
 }
 
-.card-content .order{
-    display: inline;
-    background-color: #2196F3;
-    border-radius: 10px;
-
+.order-info{
+    display:inline-block;
+    text-align: justify;
+    margin: 40px;
+    font-size: large;
 }

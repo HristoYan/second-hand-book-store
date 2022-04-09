@@ -47,8 +47,7 @@ const Navigation = ({ setUserToEdit, search, setSearch, books, setTitle, setOrde
       noOrders();
     }
     setOrders(orders.orders);
-    navigate('/orders')
-
+    navigate('/orders');
   }
 
   const activeClassName = "Nav-active";
@@ -69,7 +68,7 @@ const Navigation = ({ setUserToEdit, search, setSearch, books, setTitle, setOrde
             </span>
           </NavLink>)}
 
-        <ul>
+        <ul id='navContent'>
           {isSeller || isAdmin ? (
             <>
               <li id='add_book'> <NavLink
@@ -88,18 +87,39 @@ const Navigation = ({ setUserToEdit, search, setSearch, books, setTitle, setOrde
 
             </>) : undefined
           }
-          {user && (
-            <>
-              <li> <NavLink
-                to="/favorites"
-                className={({ isActive }) =>
-                  isActive ? activeClassName : undefined}>
-                <span href="#" className="brand-logo logo-container">
-                  <span className="large material-icons" >favorite</span>
-                </span>
-              </NavLink></li>
-            </>
-          )}
+          <div id='iconsNav'>
+            {user && (
+              <>
+                <li> <NavLink
+                  to="/favorites"
+                  className={({ isActive }) =>
+                    isActive ? activeClassName : undefined}>
+                  <span id='favorite' href="#" className="brand-logo logo-container">
+                    <span className="large material-icons" >favorite</span>
+                  </span>
+                </NavLink></li>
+                <li> <NavLink
+                  to="/cart"
+                  className={({ isActive }) =>
+                    isActive ? activeClassName : undefined}>
+                  <span id='shopping_cart' href="#" className="brand-logo logo-container">
+                    <span className="large material-icons shoping_cart" >shopping_cart</span>
+                  </span>
+                </NavLink>
+                </li>
+                <li><NavLink
+                  to="/orders"
+                  className={({ isActive }) =>
+                    isActive ? activeClassName : undefined}>
+                  <span id='orders' href="#" className="brand-logo logo-container">
+                    <span className="large material-icons shoping_cart" onClick={handleOrders} >assignment</span>
+                  </span>
+                </NavLink>
+                </li>
+
+              </>
+            )}
+          </div>
           {
             isAdmin && <li>
               <NavLink
@@ -133,24 +153,6 @@ const Navigation = ({ setUserToEdit, search, setSearch, books, setTitle, setOrde
           }
         </ul>
 
-        {user ? (<NavLink
-          to="/cart"
-          className={({ isActive }) =>
-            isActive ? activeClassName : undefined}>
-          <span id='shopping_cart' href="#" className="brand-logo logo-container">
-            <span className="large material-icons shoping_cart" >shopping_cart</span>
-          </span>
-        </NavLink>) : undefined}
-
-        {user ? (<NavLink
-          to="/?"
-          className={({ isActive }) =>
-            isActive ? activeClassName : undefined}>
-          <span id='orders' href="#" className="brand-logo logo-container">
-            <span className="large material-icons shoping_cart" onClick={handleOrders} >assignment</span>
-          </span>
-        </NavLink>) : undefined}
-
         <ul className="right hide-on-med-and-down">
           <li><a href='#'>
             {!!user && <> <input id='search' type="text" name="search" value={search} onChange={(e) => setSearch(e.target.value)} placeholder="Search title" />
@@ -160,7 +162,7 @@ const Navigation = ({ setUserToEdit, search, setSearch, books, setTitle, setOrde
             </>}
           </a></li>
 
-          <li><a href='#' onClick={setUser}>{user?.username ?? undefined}</a></li>
+          <li><a id='user-name' href='#' onClick={setUser}>{user?.username ?? undefined}</a></li>
           {!!user && <li><a onClick={onLogOut} href="#">Log out</a></li>}
         </ul>
 

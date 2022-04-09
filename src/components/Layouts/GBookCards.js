@@ -38,16 +38,19 @@ const GBookCards = ({ book, setBookToSell, titleCheck, setMessage }) => {
             <div className="card-image waves-effect waves-block waves-light">
                 <img id="gbook" className="GBook-image activator responsive-img" src={book.volumeInfo.imageLinks.thumbnail} alt="Book Picture" />
             </div>
+            <div id='gBookInfo'>
             <div className="card-content">
                 <span className="card-title activator grey-text text-darken-4">{book.volumeInfo.title}<i className="material-icons right">more_vert</i></span>
-                <p>Authors: {book.volumeInfo.authors.join(', ')}</p>
+                
             </div>
-            <div className="card-reveal">
+            <div  className="card-reveal">
                 <span className="card-title grey-text text-darken-4">{book.volumeInfo.title}<i className="material-icons right">close</i></span>
+                <p>Authors: {book.volumeInfo.authors.join(', ')}</p>
                 <p>Published on: {book.volumeInfo.publishedDate}</p>
                 <div>
                         {book.volumeInfo.description}
                 </div>
+            </div>
             </div>
             <div id='gButton'>
                 {(user.role==='Seller'|| user.role ==='Admin') && <button className='navButon' onClick={sellThisBook}>Sell This Book</button>}

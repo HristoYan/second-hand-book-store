@@ -13,9 +13,9 @@
     align-content: flex-end;
 }
 
-/* buttons.navButon{
+.navButon{
     color: white;
-} */
+}
 
 #card{
     border-radius: 10px;
@@ -29,3 +29,4 @@
     align-items: flex-end;
 
 }
+
