@@ -1,19 +1,19 @@
 import React from 'react';
 import '../utilities/styleH2.css';
-import OrderList from './OrderList';
+import OrderDetailesList from './OrderDetailesList';
 
-const OrdersView = ({orders, setOrderSelect}) => {
+const OrderDetailes = ({orders}) => {
     
     return (
         <div className="container">
             <div className="section">
-                <h2>Your Ordres</h2>
+                <h2>Your Order Detailes</h2>
                 <div className="row">
-                    <OrderList  orders={orders} setOrderSelect={setOrderSelect}/>
+                    <OrderDetailesList  orders={orders}/>
                 </div>
             </div>
         </div >
     )
 }
 
-export default OrdersView
+export default OrderDetailes

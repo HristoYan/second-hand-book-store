@@ -1,9 +1,17 @@
+import { useNavigate } from 'react-router-dom';
+import orderApiClient from '../../services/order-api-client';
 import './OrderCards.css';
 
-export const OrderCards = ({ order }) => {
-
+export const OrderCards = ({ order, setOrderSelect }) => {
+    const navigane = useNavigate();
+    async function orderDisplay() {
+        const response = await orderApiClient.fetchOrderById(order.orderId);
+        console.log(`OrderResponse: ${response.ordered_books}`);
+        setOrderSelect(response.ordered_books);
+        navigane('/order-detailes');
+    }
     return (
-        <div id="order-card" className="card col m12" >
+        <div id="order-card" className="card col m12" onClick={orderDisplay}>
             <div className="card-content lightblue order">
 
                 <div className='order-info' id='ordernum'><h5>Order # </h5>{order.orderId}</div>

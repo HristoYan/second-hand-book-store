@@ -24,6 +24,7 @@ import { SingleBookView } from './components/Layouts/SingleBookView';
 import Titled from './components/Layouts/Titled';
 import Loader from './components/utilities/Loader';
 import OrdersView from './components/Layouts/OrdersView';
+import OrderDetailes from './components/Layouts/OrderDetailes';
 
 function App() {
   const [tags, setTags] = useState();
@@ -40,6 +41,7 @@ function App() {
   const [bookToEdit, setBookToEdit] = useState();
   const [comment, setComment] = useState({});
   const [orders, setOrders] = useState([]);
+  const [orderSelect, setOrderSelect] = useState([]);
   const [errors, setErrors] = useState();
   const [messages, setMessages] = useState();
   const { user } = useUser();
@@ -168,7 +170,8 @@ function App() {
             }
           />
           <Route path='/book' element={<SingleBookView bookId={bookSelect} comment={comment} setComment={setComment}/>} />
-          <Route path='/orders' element={<OrdersView orders={orders}/>} />
+          <Route path='/orders' element={<OrdersView orders={orders} setOrderSelect={setOrderSelect}/>} />
+          <Route path='/order-detailes' element={<OrderDetailes orders={orderSelect} />} />
           <Route path='/title-check' element={<Titled title={title} onBookSelect={setBookSelect} setFavorite={setFavorite} setCart={setCart} cart={cart} />} />
           <Route path='/*' element={<h2>You Probably Lost Yourself</h2>} />
 
