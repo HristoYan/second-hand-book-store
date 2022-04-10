@@ -44,7 +44,6 @@ function App() {
   const [orderSelect, setOrderSelect] = useState([]);
   const [errors, setErrors] = useState();
   const [messages, setMessages] = useState();
-  const { user } = useUser();
 
   const Cart = React.lazy(() => import("./components/Layouts/Cart"));
 
@@ -71,7 +70,7 @@ function App() {
       .catch(err => {
         setErrors(err);
       });
-  }, [comment]);
+  }, [comment, bookToEdit]);
 
   useEffect(() => {
     console.log(tags);
@@ -139,7 +138,7 @@ function App() {
     navigate('/title-check');
 }
 
-  console.log(`Titelet App: ${JSON.stringify(title)}`);
+  console.log(`CART: ${cart}`);
 
   return (
     <>

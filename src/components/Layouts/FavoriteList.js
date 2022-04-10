@@ -6,7 +6,8 @@ const FavoriteList = ({ books, onDeleteBook, onEditBook, setFavorite, setCart, c
     return (
         <div className="BookList-items">
             {
-                books?.map(book => (<FavoriteCards  book={book} key={book.id} onBookSelect={onBookSelect} onDeleteBook={onDeleteBook} onEditBook={onEditBook} setFavorite={setFavorite} setCart={setCart} cart={cart}/>))
+                books?.map(book => (<FavoriteCards  book={book} key={book.id} onBookSelect={onBookSelect}
+                     onDeleteBook={onDeleteBook} onEditBook={onEditBook} setFavorite={setFavorite} setCart={setCart} cart={cart}/>))
             }
         </div>
     );

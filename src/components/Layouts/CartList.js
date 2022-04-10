@@ -10,6 +10,7 @@ import userApiClient from "../../services/user-api-client";
 
 const CartList = ({ cart, setCart }) => {
     const {user} = useUser();
+    console.log(cart);
     const cartTotal = cart.reduce((currTotal, item) => {
         return currTotal + Number(item.price);
     }, 0);
