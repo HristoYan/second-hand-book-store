@@ -17,6 +17,7 @@ h3{
 }
 
 #img{
+    margin-left: 600px;
     grid-area: picture;
     height: 300px;
     width: auto;
@@ -25,12 +26,13 @@ h3{
 .information{
     grid-area: information;
     color: white;
+    margin-right: 500px;
     
 }
 
 .info{
     grid-area: details;
-    margin-bottom: 40px;
+    margin: 0px 200px;
     border: 1px solid black;
     border-radius: 5px;
     padding: 50px;
@@ -47,4 +49,12 @@ h3{
     display: inline-block;
     border: 2px solid #2196F3;
     margin: 20px;
+}
+
+#comment{
+    text-align: center;
+    margin-top: 50px;
+    margin-left: 350px;
+    margin-right: 200px;
+    width: 60%;
 }

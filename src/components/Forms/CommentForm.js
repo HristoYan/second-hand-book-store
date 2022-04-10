@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom';
 import { useUser } from '../../hooks/useUser';
 import booksApiClient from '../../services/books-api-client';
+import './CommentForm.css';
 
 export const CommentForm = ({book, comment, setComment}) => {
     const {user} = useUser();
@@ -36,7 +37,7 @@ export const CommentForm = ({book, comment, setComment}) => {
         <div className='comment-area'>
             <div className="row">
                 <div className="input-field col s12">
-                    <textarea id="comment" name='comment' className="materialize-textarea" 
+                    <textarea id="comment" name='comment' className="materialize-textarea"
                     placeholder='Add Your Comment' 
                     onChange={(e) => setComment(e.target.value)}></textarea>
                 </div>

@@ -69,7 +69,7 @@ function App() {
       .catch(err => {
         setErrors(err);
       });
-  }, []);
+  }, [comment]);
 
   useEffect(() => {
     console.log(tags);
