@@ -8,7 +8,7 @@ const GBookCards = ({ book, setBookToSell, titleCheck, setMessage }) => {
     const navigate = useNavigate();
 
     const theBook = {
-        imgUrl: book.volumeInfo.imageLinks.thumbnail,
+        imgUrl: book?.volumeInfo.imageLinks.thumbnail,
         title: book.volumeInfo.title,
         authors: book.volumeInfo.authors,
         publisher: book.volumeInfo.publisher,
@@ -34,7 +34,7 @@ const GBookCards = ({ book, setBookToSell, titleCheck, setMessage }) => {
     }
 
     return (
-        <div id='gBook' className="card col s12 m4" style={{ height: "540px", width: "370px", margin: "10px"}}>
+        <div id='gBook' className="card col s12 m4" style={{ height: "540px", width: "400px", margin: "10px"}}>
             <div className="card-image waves-effect waves-block waves-light">
                 <img id="gbook" className="GBook-image activator responsive-img" src={book.volumeInfo.imageLinks.thumbnail} alt="Book Picture" />
             </div>
@@ -45,7 +45,7 @@ const GBookCards = ({ book, setBookToSell, titleCheck, setMessage }) => {
             </div>
             <div  className="card-reveal">
                 <span className="card-title grey-text text-darken-4">{book.volumeInfo.title}<i className="material-icons right">close</i></span>
-                <p>Authors: {book.volumeInfo.authors.join(', ')}</p>
+                <p>Authors: {book.volumeInfo.authors?.join(', ')}</p>
                 <p>Published on: {book.volumeInfo.publishedDate}</p>
                 <div>
                         {book.volumeInfo.description}

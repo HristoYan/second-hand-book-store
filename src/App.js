@@ -19,7 +19,6 @@ import { GBookToSellForm } from './components/Forms/GBookToSellForm';
 import Favorites from './components/Layouts/Favorites';
 import { useUser } from './hooks/useUser';
 import userApiClient from './services/user-api-client';
-// import Cart from './components/Layouts/Cart';
 import { SingleBookView } from './components/Layouts/SingleBookView';
 import Titled from './components/Layouts/Titled';
 import Loader from './components/utilities/Loader';
@@ -44,22 +43,20 @@ function App() {
   const [orderSelect, setOrderSelect] = useState([]);
   const [errors, setErrors] = useState();
   const [messages, setMessages] = useState();
+  const navigate = useNavigate();
 
   const Cart = React.lazy(() => import("./components/Layouts/Cart"));
 
   useEffect(async () => {
     const userList = await userApiClient.fetchUsers();
-    console.log(userList);
     setUsers(userList);
   }, [userToEdit]);
 
-  const navigate = useNavigate();
 
   function clearMessagesAndErrors() {
     setErrors(undefined);
     setMessages(undefined);
   }
-  console.log(favorite);
 
   useEffect(() => {
     bookApiClient.fetchBooksForSell()
@@ -70,14 +67,13 @@ function App() {
       .catch(err => {
         setErrors(err);
       });
-  }, [comment, bookToEdit]);
+  }, [comment, bookToEdit, gBooks]);
 
   useEffect(() => {
     console.log(tags);
     bookApiClient.fetchBooksFromGoogleApi(tags)
       .then(results => {
         setGBooks(results.items);
-        console.log(gBooks);
         clearMessagesAndErrors();
       })
       .catch(err => {
@@ -131,14 +127,10 @@ function App() {
   }
 
   function titleCheck (title) {
-    console.log(`title: ${title}`);
     const theTitle = books.filter(book => book.title === title);
-    console.log(`THE TITLE: ${theTitle}`);
     setTitle(theTitle)
     navigate('/title-check');
 }
-
-  console.log(`CART: ${typeof(cart)}`);
 
   return (
     <>

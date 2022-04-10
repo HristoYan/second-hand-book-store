@@ -32,8 +32,8 @@ export const EditUser = ({ user }) => {
 
         }),
         onSubmit: async (values) => {
-            await userApiClient.putUpdateUser(values);
-            navigate("/");
+            const result = await userApiClient.putUpdateUser(values);
+
         }
     });
 

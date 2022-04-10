@@ -8,6 +8,7 @@ const Header = ({ setTags }) => {
     const user = useUser();
     console.log(user.user);
     const tags = document.getElementById('explore');
+    
     function explore() {
         let tagsToString;
         if (tags.value) {
