@@ -1,24 +1,20 @@
 import React from 'react';
 import './BookCards.css';
 import { useUser } from '../../hooks/useUser';
-import { useNavigate, useParams } from 'react-router-dom';
 import userApiClient from '../../services/user-api-client';
+import { useNavigate } from 'react-router-dom';
 
 const FavoriteCards = ({ book, setCart, cart, onBookSelect }) => {
     const { user, setNewUser } = useUser();
     const userId = user?.id;
     const navigate = useNavigate();
-    const params = useParams();
-    console.log(cart);
+    console.log(`adding to cart: ${cart}`);
 
     function onAddingCart() {
         console.log(`Add to Cart: ${JSON.stringify(book)}`);
-        if (!!cart) {
 
-            setCart(cart => [...cart, book]);
-        } else {
-            setCart(book);
-        }
+        setCart(cart => [...cart, book]);
+
         navigate('/favorites');
     }
 
@@ -63,7 +59,7 @@ const FavoriteCards = ({ book, setCart, cart, onBookSelect }) => {
             </div>
             <div className="buttons-div">
                 {user && <button id='see_more' className='navButon' onClick={onBookClick}>See More</button>}
-                {(user && userId !== book.sellerId) && <button className='navButon' onClick={() => onAddingCart(book)}>
+                {(user && userId !== book.sellerId) && <button className='navButon' onClick={onAddingCart}>
                     <span id="logo-container" href="#" className="brand-logo">
                         <span className="large material-icons" >add_shopping_cart</span>
                     </span>

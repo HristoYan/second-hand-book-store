@@ -4,7 +4,7 @@ import { useUser } from '../../hooks/useUser';
 
 import FavoriteList from './FavoriteList';
 
-const Favorites = ({ books, onDeleteBook, setCart, onBookSelect }) => {
+const Favorites = ({ books, onDeleteBook, setCart, cart, onBookSelect }) => {
     console.log(books);
     const { user } = useUser();
     
@@ -15,7 +15,7 @@ const Favorites = ({ books, onDeleteBook, setCart, onBookSelect }) => {
                 <div className="section">
                     <h2>Your Favorite Books</h2>
                     <div className="row">
-                        <FavoriteList books={favBooks} onDeleteBook={onDeleteBook} setCart={setCart} onBookSelect={onBookSelect}/>
+                        <FavoriteList books={favBooks} onDeleteBook={onDeleteBook} setCart={setCart} cart={cart} onBookSelect={onBookSelect}/>
                     </div>
                 </div>
             </div > : <h2>Nothing in  Favorites yet!</h2>}

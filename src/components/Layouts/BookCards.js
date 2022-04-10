@@ -28,12 +28,9 @@ const BookCards = ({ book, onDeleteBook, onEditBook, setFavorite, setCart, cart,
 
     function onAddingCart() {
         console.log(`Add to Cart: ${JSON.stringify(book)}`);
-        if (!!cart) {
 
-            setCart(cart => [...cart, book]);
-        } else {
-            setCart(book);
-        }
+        setCart(cart => [...cart, book]);
+
         navigate("/");
 
     }

@@ -138,7 +138,7 @@ function App() {
     navigate('/title-check');
 }
 
-  console.log(`CART: ${cart}`);
+  console.log(`CART: ${typeof(cart)}`);
 
   return (
     <>
@@ -158,7 +158,7 @@ function App() {
           <Route path='/edit-book' element={<EditBookForm onBookSubmit={handleSubmitBook("edit")} initialValue={bookToEdit} />} />
           <Route path='/my-books' element={<MyBooks books={books} onDeleteBook={deleteBook} onEditBook={editBook} onBookSelect={setBookSelect}/>} />
           <Route path='/sell-gbook' element={<GBookToSellForm book={bookToSell} onBookSubmit={handleSubmitBook("add")} />} />
-          <Route path='/favorites' element={<Favorites users={users} books={books} favorite={favorite} setCart={setCart} onBookSelect={setBookSelect} />} />
+          <Route path='/favorites' element={<Favorites users={users} books={books} favorite={favorite} setCart={setCart} cart={cart} onBookSelect={setBookSelect} />} />
 
           <Route
             path='/cart'
